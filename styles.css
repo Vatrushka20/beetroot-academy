@@ -1,0 +1,111 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.border {
+    border-top: 1px solid #CCCCCC;
+}
+
+.section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.primaryTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: #000000;
+    padding-bottom: 32px;
+}
+
+.secondaryTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 128px;
+    align-items: center;
+}
+
+.profile .name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 52px;
+    color: #000000;
+}
+
+.profile .position {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 36px;
+    color: #000000;
+    padding-top: 18px;
+    padding-bottom: 32px;
+
+}
+
+.profile img {
+    width: 264px;
+    height: 264px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 128px;
+    padding-top: 50px;
+}
+
+.education .types {
+    padding-bottom: 32px;
+}
+
+.languages .level {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.rightContent .description {
+    padding-bottom: 20px;
+}
+
+
+@media screen and (max-width: 1199px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
