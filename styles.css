@@ -99,6 +99,8 @@
 }
 
 .rightContent .description {
+    margin-right: auto;
+    width: 410px;
     padding-bottom: 20px;
 }
 
