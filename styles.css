@@ -1,0 +1,90 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.primaryTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 65px;
+    color: black;
+    text-align: center;
+}
+
+.secondaryTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 43px;
+    line-height: 39px;
+    color: black;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 40px;
+    color: #191b1c;
+    padding-top: 50px;
+}
+
+.paddingLi {
+    padding-left: 60px;
+}
+
+.paddingImg {
+    padding-top: 70px;
+}
+
+.header .bold {
+    font-weight: bold;
+}
+
+.support .browserIcon {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.support .border {
+    border-bottom: 1px solid black;
+}
+
+li {
+    list-style-type: disc;
+}
+
+.resume {
+    width: 100%;
+    height: 500px;
+}
+
+.extraHomework .secondaryTitle {
+    padding-bottom: 50px;
+}
+
+.video {
+    text-align: center;
+}
+
+.video .videoExample {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
