@@ -60,6 +60,12 @@
     border-bottom: 1px solid black;
 }
 
+li:hover {
+    border-bottom: 1px solid black;
+    padding-bottom: 1px;
+    /*change hover*/
+}
+
 li {
     list-style-type: disc;
 }
