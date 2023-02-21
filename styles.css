@@ -1,0 +1,139 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #2f4d55;
+    background: url(https://dl.dropbox.com/s/mpmu0gjtxv2x3fs/Webp.net-resizeimage%20%281%29.jpg?raw=1) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    width: 600px;
+    align-items: center;
+    padding: 30px;
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 170px 300px;
+    grid-gap: 30px;
+    align-items: center;
+}
+
+
+.form .input, textarea, select {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border: none;
+    color: #807c7c;
+    border-radius: 10px;
+    resize: none;
+}
+
+.form .gender, .form .gender label {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form .gender label, .form .gender input, input[type="checkbox"], button {
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    border: 3px solid gray;
+}
+
+input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+    background: #011725;
+}
+
+input[type="radio"]:checked {
+    border-color: #03072a;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 20px #1c528d;
+}
+
+.form .button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border: none;
+    color: #d5d5d5;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.form .reset {
+    color: #f41a6e;
+}
+
+.form .submit {
+    color: #005bf8;
+}
+
+.button:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #3a7999;
+    /*box-shadow: inset 0 0 0 3px #3a7999;*/
+}
+
+.reset:active {
+    box-shadow: 5px 5px 5px #005bf8;
+}
+
+.submit:active {
+    box-shadow: 5px 5px 5px #f41a6e;
+}
+
+
+@media screen and (max-width: 1199px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
