@@ -18,22 +18,22 @@
     <form class="form" action="#">
         <div class="block">
             <label for="name">Enter your name</label>
-            <input class="input" id="name" type="text" placeholder="Your name" required>
+            <input class="input" id="name" type="text" name="name" placeholder="Your name" required>
         </div>
 
         <div class="block">
             <label for="email">Enter your email</label>
-            <input class="input" id="email" type="email" placeholder="Your email" required>
+            <input class="input" id="email" type="email" name="email" placeholder="Your email" required>
         </div>
 
         <div class="block">
             <label for="password">Password</label>
-            <input class="input" id="password" type="password" minlength="8" placeholder="Create the password"
+            <input class="input" id="password" type="password" name="password" minlength="8" placeholder="Create the password"
                    required>
         </div>
         <div class="block">
             <label for="password2">Repeat the password</label>
-            <input class="input" id="password2" type="password" minlength="8" placeholder="Repeat the password"
+            <input class="input" id="password2" type="password" name="password2" minlength="8" placeholder="Repeat the password"
                   required>
         </div>
 
@@ -41,7 +41,7 @@
             <span class="sex">Gender</span>
             <div class="gender">
                 <label for="woman">female
-                    <input class="radio " id="woman" type="radio" name="fav_language">
+                    <input checked class="radio " id="woman" type="radio" name="fav_language">
                 </label>
                 <label for="man">male
                     <input class="radio " id="man" type="radio" name="fav_language">
@@ -51,7 +51,7 @@
 
         <div class="block">
             <label for="year">Enter your age </label>
-            <input class="input" id="year" type="number" min="0" max="99" required>
+            <input class="input" id="year" type="number" name="number" min="18" max="99" required>
         </div>
 
         <div class="block">
@@ -71,7 +71,7 @@
         </div>
 
         <label for="agree">
-            <input class="input" id="agree" type="checkbox">
+            <input class="input" id="agree" type="checkbox" required>
             I agree with the privacy policy</label>
 
         <div class="block">
