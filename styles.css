@@ -1,0 +1,176 @@
+.container {
+    width: 100%;
+    max-width: 969px;
+    margin: auto;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.generalTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    color: #070707;
+    padding-top: 12px;
+    padding-bottom: 50px;
+}
+
+.title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+    text-align: center;
+    color: #070707;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #070707;
+}
+
+.secondaryDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #828282;
+    padding-top: 25px;
+    padding-bottom: 60px;
+}
+
+.navigation .navList {
+    display: flex;
+    justify-content: center;
+    grid-gap: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #828282;
+    border-bottom: 1px solid #828282;
+    width: 970px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin: auto;
+}
+
+.navigation .navList .navItem:nth-child(1) {
+    color: #070707;
+}
+
+.aboutMe {
+    background: #F6F6F6;
+}
+
+.aboutMe .block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+    margin: auto;
+}
+
+.skills .product {
+    display: flex;
+    flex-direction: row;
+    gap: 97px;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.skills .description {
+    padding-top: 20px;
+}
+
+.skills .figma .secondaryDescription {
+    padding-bottom: 80px;
+}
+
+.skills .product .icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio {
+    background: #F6F6F6;
+}
+
+.portfolio .block {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding-top: 50px;
+}
+
+.portfolio .block .description {
+    padding-top: 40px;
+    text-decoration-line: underline;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .title {
+    padding-bottom: 20px;
+}
+
+.generalButton {
+    width: 180px;
+    height: 44px;
+    background: #070707;
+    border-radius: 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin-top: 70px;
+}
+
+.generalButton:hover {
+    background-color: #fe4544;
+    box-shadow: inset 0 0 0 rgb(169, 30, 46), 0 0 1.5em rgb(217, 67, 84);
+}
+
+.footer .socialGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-top: 30px;
+}
+
+.footer .text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #828282;
+    padding-top: 60px;
+}
+
+@media screen and (max-width: 970px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

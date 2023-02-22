@@ -5,9 +5,143 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Homework Figma</title>
 </head>
 <body>
+
+<header class="header">
+    <nav class="navigation">
+        <ul class="navList">
+            <li class="navItem">Home</li>
+            <li class="navItem">About me</li>
+            <li class="navItem">Skills</li>
+            <li class="navItem">Portfolio</li>
+            <li class="navItem">Contacts</li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="name container">
+        <h1 class="generalTitle">Denis Novik</h1>
+        <img src="assets/photo.svg" alt="photo">
+    </div>
+
+    <div class="aboutMe">
+        <div class="container section">
+            <h2 class="title">About me</h2>
+            <div class="block">
+                <p class="description">Hi, I'm Denis – UX/UI designer from Minsk. <br>
+                    I'm interested in design and everything connected with it.</p>
+                <p class="description">I'm studying at courses "Web and mobile design <br>
+                    interfaces" in IT-Academy.</p>
+                <p class="description">Ready to implement excellent projects <br>
+                    with wonderful people.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="skills container section">
+        <h2 class="title">Skills</h2>
+        <p class="description">I work in such programs as</p>
+        <div class="product">
+            <section class="adobePhotoshop">
+                <img class="icon" src="assets/photoshop.svg" alt="icon">
+                <p class="secondaryDescription">Adobe <br> Photoshop</p>
+                <div class="stars">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                </div>
+            </section>
+
+            <section class="adobeIllustrator">
+                <img class="icon" src="assets/illustrator.svg" alt="icon">
+                <p class="secondaryDescription">Adobe <br> Illustrator</p>
+                <div class="stars">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                </div>
+
+            </section>
+            <section class="adobeEffects">
+                <img class="icon" src="assets/effects.svg" alt="icon">
+                <p class="secondaryDescription">Adobe <br> After Effects</p>
+                <div class="stars">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-empty.svg" alt="iconStar">
+                </div>
+
+            </section>
+            <section class="figma">
+                <img class="icon" src="assets/figma.svg" alt="icon">
+                <p class="secondaryDescription">Figma</p>
+                <div class="stars">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                    <img src="assets/starIcon-full.svg" alt="iconStar">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="portfolio section">
+        <div class="container">
+            <h2 class="title">Portfolio</h2>
+            <div class="block">
+                <section class="fashionStore">
+                    <img src="assets/fashionStore.jpeg" alt="image">
+                    <p class="description">Online fashion store - <br> Homepage</p>
+                </section>
+
+                <section class="reebok">
+                    <img src="assets/reebok.jpeg" alt="image">
+                    <p class="description">Reebok Store - Concept</p>
+                </section>
+
+                <section class="braun">
+                    <img src="assets/braun.jpeg" alt="image">
+                    <p class="description">Braun Landing Page - Concept</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer container section">
+    <h2 class="title">Contacts</h2>
+    <p class="description">Want to know more or just chat? <br> You are welcome!</p>
+    <button class="generalButton">
+        <a class="link" target="_blank" href="mailto:vatralanaska@gmail.com">Send message</a>
+    </button>
+
+    <div class="socialGroup">
+        <img src="assets/linkedin.svg" alt="icon">
+        <img src="assets/instagram.svg" alt="icon">
+        <img src="assets/behance.svg" alt="icon">
+        <img src="assets/dribbble.svg" alt="icon">
+    </div>
+
+    <p class="text">Like me on <br>
+        LinkedIn, Instagram, Behance, Dribble</p>
+
+</footer>
 
 </body>
 </html>
