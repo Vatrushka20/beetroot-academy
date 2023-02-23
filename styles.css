@@ -119,7 +119,10 @@
 
 .portfolio .block .description {
     padding-top: 40px;
-    text-decoration-line: underline;
+}
+
+.portfolio .link:hover {
+    text-decoration: underline;
 }
 
 .footer {
