@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 970px;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .section {
@@ -12,41 +13,31 @@
 }
 
 .generalTitle {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 48px;
-    line-height: 65px;
     color: #070707;
     padding-top: 12px;
     padding-bottom: 50px;
 }
 
 .title {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 34px;
-    line-height: 46px;
     text-align: center;
     color: #070707;
 }
 
 .description {
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 25px;
     text-align: center;
     color: #070707;
 }
 
 .secondaryDescription {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    line-height: 19px;
     text-align: center;
-    letter-spacing: 0.02em;
     color: #828282;
     padding-top: 25px;
     padding-bottom: 60px;
@@ -55,12 +46,9 @@
 .navigation .navList {
     display: flex;
     justify-content: center;
-    grid-gap: 40px;
-    font-family: 'Open Sans', sans-serif;
+    gap: 40px;
     font-weight: 400;
     font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 0.02em;
     color: #828282;
     border-bottom: 1px solid #828282;
     width: 970px;
@@ -73,10 +61,13 @@
     color: #070707;
 }
 
+.navigation .navList .navItem:hover {
+    text-decoration: underline;
+}
+
 .aboutMe {
     background: #F6F6F6;
 }
-
 
 .aboutMe .introduction {
     display: flex;
@@ -123,8 +114,12 @@
     padding-top: 40px;
 }
 
-.portfolio .link:hover {
+.portfolio .link {
     text-decoration: underline;
+}
+
+.portfolio .link:hover {
+
 }
 
 .footer {
@@ -142,10 +137,8 @@
     height: 44px;
     background: #070707;
     border-radius: 22px;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
-    line-height: 25px;
     text-align: center;
     letter-spacing: 0.1em;
     color: #FFFFFF;
@@ -153,8 +146,9 @@
 }
 
 .generalButton:hover {
-    background-color: #fe4544;
-    box-shadow: inset 0 0 0 rgb(169, 30, 46), 0 0 1.5em rgb(217, 67, 84);
+    background-color: white;
+    color: black;
+    border: 3px solid black;
 }
 
 .generalButton:active {
@@ -170,7 +164,6 @@
 }
 
 .footer .text {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
