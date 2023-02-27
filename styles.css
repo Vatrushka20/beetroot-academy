@@ -3,8 +3,14 @@
 .container {
     width: 100%;
     max-width: 970px;
-    margin: auto;
+    margin: 0 auto;
+}
+
+html {
     font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #070707;
 }
 
 .section {
@@ -28,8 +34,6 @@
 }
 
 .description {
-    font-weight: 400;
-    font-size: 18px;
     text-align: center;
     color: #070707;
 }
@@ -47,8 +51,6 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    font-weight: 400;
-    font-size: 18px;
     color: #828282;
     border-bottom: 1px solid #828282;
     width: 970px;
