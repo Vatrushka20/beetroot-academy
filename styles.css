@@ -38,7 +38,7 @@ body {
 }
 
 .background-grey {
-    background-color: #4A4F56;;
+    background-color: #4A4F56;
 }
 
 /*Main*/
@@ -52,15 +52,20 @@ body {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    padding: 11px 0 13px 16px;
+    padding: 8px 0 10px 16px;
+    cursor: pointer;
 }
 
 .block:nth-of-type(odd) {
     background-color: #88839E;
+    border-top: 3px solid #88839E;
+    border-bottom: 3px solid #88839E;
 }
 
 .block:nth-of-type(even) {
     background-color: #7A7593;
+    border-top: 3px solid #7A7593;
+    border-bottom: 3px solid #7A7593;
 }
 
 .block:hover {
@@ -102,7 +107,12 @@ input + label {
 
 input:checked + label {
     text-decoration: line-through;
+    color: #9B96AC;
 }
+
+/*button {*/
+/*    background-color: #4A4F56;*/
+/*}*/
 
 /*Footer*/
 
