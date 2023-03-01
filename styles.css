@@ -33,9 +33,10 @@ html {
     color: #070707;
 }
 
-.description {
+.description:not(:last-child) {
     text-align: center;
     color: #070707;
+    padding-bottom: 30px;
 }
 
 .secondaryDescription {
@@ -72,9 +73,11 @@ html {
 }
 
 .aboutMe .introduction {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    max-width: 480px;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*gap: 30px;*/
+    text-align: center;
     padding-top: 50px;
     margin: auto;
 }
