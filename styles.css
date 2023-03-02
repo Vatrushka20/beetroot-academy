@@ -167,7 +167,7 @@ span {
     opacity: 0.5;
 }
 
-.cities:hover li:hover {
+.cities li:hover {
     opacity: 1;
 }
 
