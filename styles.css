@@ -1,0 +1,149 @@
+@import "styles/normalize.css";
+
+* {
+    transition: all .1s ease-in;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2F281E;
+    background-color: #F2F2F2;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 54px;
+}
+
+/* HEADER*/
+
+.header {
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+.block {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.block-one {
+    text-align: left;
+    width: 25%;
+}
+
+.block-two {
+    width: 49%;
+}
+
+.block-three {
+    width: calc(25% - 10px);
+}
+
+.nav-item:first-child {
+    color: #FF9900;
+}
+
+.nav-item {
+    display: inline-block;
+    font-weight: 400;
+    padding-right: 20px;
+}
+
+.nav-item:hover {
+    color: #FF9900;
+}
+
+.btn {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    width: 110px;
+    height: 46px;
+    border-radius: 4px;
+    margin-left: 32px;
+}
+
+.sign-in {
+    border: 1px solid #BCD0E5;
+}
+
+.sign-up {
+    background-color: #FF9900;
+    color: #FFFFFF;
+}
+
+.sign-in:hover {
+    background-color: #FF9900;
+    color: #FFFFFF;
+}
+
+.sign-up:hover {
+    border: 1px solid #BCD0E5;
+    background-color: #F2F2F2;
+    color: black;
+}
+
+/*MAIN*/
+
+/*FIRST SCREEN*/
+
+
+.first-screen {
+    max-width: 1200px;
+    margin: 0 auto;
+    white-space: nowrap;
+    padding-top: 70px;
+}
+
+.first-screen .content {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.left p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.general-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background: #FF9900;
+    border-radius: 4px;
+    width: 180px;
+    height: 50px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.general-button:hover {
+    background-color: #FFFFFF;
+    color: black;
+    border: 1px solid #BCD0E5
+}
+
+
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
