@@ -14,6 +14,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 16px;
+    line-height: 26px;
     color: #2F281E;
     background-color: #F2F2F2;
 }
@@ -22,6 +23,17 @@ h1 {
     font-weight: 700;
     font-size: 44px;
     line-height: 54px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 /* HEADER*/
@@ -138,6 +150,88 @@ h1 {
     background-color: #FFFFFF;
     color: black;
     border: 1px solid #BCD0E5
+}
+
+
+.product-managers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 125px;
+    padding-top: 100px;
+    line-height: 26px;
+}
+
+.product-managers .right-content h2 {
+    padding-bottom: 20px;
+    padding-top: 8px;
+}
+
+.product-managers .right-content .description {
+    width: 440px;
+}
+
+.product-managers .right-content .checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.product-managers .right-content label {
+    display: grid;
+    grid-template-columns: 5% 80%;
+    grid-gap: 30px;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+.product-managers .right-content input {
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.product-managers .right-content input:checked {
+    background-image: url("assets/tick-icon.svg");
+}
+
+
+/*FOOTER FOOTER*/
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.footer .input-number {
+    width: 340px;
+    height: 50px;
+    border: 1px solid #BCD0E5;
+    border-radius: 4px;
+    color: #BCD0E5;
+    padding-left: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
+.footer .input-number:hover {
+    background-color: #FFFFFF;
+}
+
+.footer .footer-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 30px;
+}
+
+.border {
+   border-top: 1px solid #BCD0E57F;
+    margin-bottom: 70px;
+    margin-top: 70px;
 }
 
 
