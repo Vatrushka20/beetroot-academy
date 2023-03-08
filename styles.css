@@ -1,0 +1,126 @@
+@import "styles/reset.css";
+
+@font-face {
+    font-family: 'Tourney';
+    src: url("fonts/tourney/tourney.ttf");
+}
+
+@font-face {
+    font-family: 'Staatliches';
+    src: url("fonts/staatliches/Staatliches-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Francois One';
+    src: url("fonts/francois-one/FrancoisOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Farro';
+    src: url("fonts/farro");
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url("fonts/pt_sans");
+}
+
+main {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+}
+
+.section {
+    padding-bottom: 70px;
+}
+
+
+/*NAVIGATION*/
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 13px;
+    padding-bottom: 83px;
+}
+
+.language {
+    font-family: 'Tourney', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    padding-right: 50px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navigation .nav-item {
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.nav-item:hover:not(.slash) {
+    opacity: 0.5;
+}
+
+/*MAIN*/
+
+.title {
+    font-family: 'Francois One', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+.chapter {
+    font-family: 'Farro', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+    color: #000000;
+    vertical-align: 50%;
+    text-transform: capitalize;
+}
+
+.description {
+    padding-bottom: 40px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.background {
+    font-family: 'Hind', sans-serif;
+    background-color: #dadada;
+}
