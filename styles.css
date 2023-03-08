@@ -50,7 +50,6 @@ h2 {
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    background: linear-gradient(360deg, #241F24 0%, black 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
 }
 
 /*HOVER FOR ITEM*/
@@ -145,7 +144,7 @@ h2 {
 .galleryThird {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 0.1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-gap: 30px;
     padding-bottom: 120px;
 }
