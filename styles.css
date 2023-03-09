@@ -1,16 +1,31 @@
 @import "styles/normalize.css";
 
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url("fonts/gilroy-bold/Gilroy-Bold.woff2") format('woff2'),
+    url("fonts/gilroy-bold/Gilroy-Bold.ttf") format('woff'),
+    url("fonts/gilroy-bold/Gilroy-Bold.woff") format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium' ;
+    src: url('fonts/gilroy-medium/Gilroy-Medium.ttf') format('truetype'),
+    url('fonts/gilroy-medium/Gilroy-Medium.woff') format('woff'),
+    url('fonts/gilroy-medium/Gilroy-Medium.woff2') format('woff2');
+}
+
 .container {
     width: 100%;
-    max-width: 970px;
-    margin: 0 auto;
+    max-width: 940px;
+    margin: auto;
 }
 
 html {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Gilroy-Medium', sans-serif;
     font-size: 18px;
+    line-height: 22px;
     color: #070707;
+    text-align: center;
 }
 
 .section {
@@ -19,11 +34,10 @@ html {
 }
 
 .generalTitle {
-    font-weight: 700;
+    font-family: 'Gilroy-Bold', sans-serif;
     font-size: 48px;
     color: #070707;
-    padding-top: 12px;
-    padding-bottom: 50px;
+    line-height: 59px;
 }
 
 .title {
@@ -40,7 +54,6 @@ html {
 }
 
 .secondaryDescription {
-    font-weight: 700;
     font-size: 14px;
     text-align: center;
     color: #828282;
@@ -49,12 +62,12 @@ html {
 }
 
 .navigation .navList {
+    font-family: 'Gilroy-Bold', sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 40px;
     color: #828282;
     border-bottom: 1px solid #828282;
-    width: 970px;
     padding-top: 28px;
     padding-bottom: 28px;
     margin: auto;
@@ -68,21 +81,50 @@ html {
     text-decoration: underline;
 }
 
+.name .first-screen {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name .first-screen .language {
+    display: flex;
+    gap: 5px;
+    transform: rotate(-90deg);
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.name .first-screen .language-item:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.name .first-screen .language-ua {
+    color: #828282;
+}
+
 .aboutMe {
     background: #F6F6F6;
 }
 
 .aboutMe .introduction {
     max-width: 480px;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*gap: 30px;*/
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     text-align: center;
     padding-top: 50px;
     margin: auto;
 }
 
 .skills .editors {
+    font-family: Gilroy-Bold, sans-serif;
+    font-size: 14px;
+    line-height: 17px;
     display: flex;
     flex-direction: row;
     gap: 97px;
@@ -177,7 +219,7 @@ html {
     padding-top: 60px;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 940px) {
     .container {
         padding-left: 20px;
         padding-right: 20px;

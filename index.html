@@ -6,9 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>Homework Figma</title>
 </head>
 <body>
@@ -16,7 +13,7 @@
 <!--Header-->
 
 <header>
-    <nav class="navigation">
+    <nav class="navigation container">
         <ul class="navList">
             <li class="navItem">
                 <a href="/home" target="_blank">Home</a>
@@ -39,17 +36,26 @@
 
 <main>
     <div class="name container">
-        <h1 class="generalTitle">Denis Novik</h1>
+        <div class="first-screen">
+            <h1 class="generalTitle">Denis <br> Novik</h1>
+            <p>UX | UI designer <br> 24 years old, Minsk</p>
+            <div class="language">
+                <p class="language-item language-ua">UA</p>
+                <p>|</p>
+                <p class="language-item">ENG</p>
+            </div>
+        </div>
+
         <img src="assets/photo.svg" alt="photo">
     </div>
 
-<!--    About me -->
+    <!--    About me -->
 
     <div class="aboutMe">
         <div class="container section">
             <h2 class="title">About me</h2>
             <div class="introduction">
-                <p class="description">Hi, I'm Denis – UX/UI designer from Minsk.
+                <p class="description">Hi, I'm Denis – UX/UI designer from Minsk. <br>
                     I'm interested in design and everything connected with it.</p>
                 <p class="description">I'm studying at courses "Web and mobile design
                     interfaces" in IT-Academy.</p>
@@ -60,7 +66,7 @@
 
     </div>
 
-<!--    Skills-->
+    <!--    Skills-->
 
     <div class="skills container section">
         <h2 class="title">Skills</h2>
@@ -116,7 +122,7 @@
         </div>
     </div>
 
-<!--    Portfolio-->
+    <!--    Portfolio-->
 
     <div class="portfolio section">
         <div class="container">
@@ -164,12 +170,12 @@
             <li><a href="#"></a></li>
         </ul>
     </div>
-<!--    <div class="socialGroup">-->
-<!--        <img src="assets/linkedin.svg" alt="icon">-->
-<!--        <img src="assets/instagram.svg" alt="icon">-->
-<!--        <img src="assets/behance.svg" alt="icon">-->
-<!--        <img src="assets/dribbble.svg" alt="icon">-->
-<!--    </div>-->
+    <div class="socialGroup">
+        <img src="assets/linkedin.svg" alt="icon">
+        <img src="assets/instagram.svg" alt="icon">
+        <img src="assets/behance.svg" alt="icon">
+        <img src="assets/dribbble.svg" alt="icon">
+    </div>
 
     <p class="text">Like me on <br>
         LinkedIn, Instagram, Behance, Dribble
