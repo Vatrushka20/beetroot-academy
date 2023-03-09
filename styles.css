@@ -2,27 +2,38 @@
 
 @font-face {
     font-family: 'Tourney';
-    src: url("fonts/tourney/tourney.ttf");
+    src: url("fonts/tourney/Tourney-VariableFont_wdth,wght.ttf") format('truetype'),
+    url("fonts/tourney/Tourney-VariableFont_wdth,wght.woff") format('woff'),
+    url("fonts/tourney/Tourney-VariableFont_wdth,wght.woff2") format('woff2');
 }
 
 @font-face {
     font-family: 'Staatliches';
-    src: url("fonts/staatliches/Staatliches-Regular.ttf");
+    src: url("fonts/staatliches/Staatliches-Regular.woff") format('woff'),
+    url("fonts/staatliches/Staatliches-Regular.woff2") format('woff2');
 }
 
 @font-face {
     font-family: 'Francois One';
-    src: url("fonts/francois-one/FrancoisOne-Regular.ttf");
+    src: url("fonts/francois-one/FrancoisOne-Regular.woff") format('woff'),
+    url("fonts/francois-one/FrancoisOne-Regular.woff2") format('woff2');
 }
 
 @font-face {
     font-family: 'Farro';
-    src: url("fonts/farro");
+    src: url("fonts/farro/Farro-Light .woff") format('woff'),
+    url("fonts/farro/Farro-Light.woff2") format('woff2');
 }
 
 @font-face {
     font-family: 'PT Sans';
-    src: url("fonts/pt_sans");
+    src: url("fonts/pt_sans/PTSans-Regular.woff2") format('woff2'),
+    url("fonts/pt_sans/PTSans-Italic.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'PT Sans-Bold';
+    src: url("fonts/pt_sans/PTSans-Bold.woff2") format('woff2');
 }
 
 main {
@@ -117,6 +128,7 @@ main {
 }
 
 .bold {
+    font-family: 'PT Sans-Bold', sans-serif;
     font-weight: 700;
 }
 
