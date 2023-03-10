@@ -1,0 +1,52 @@
+
+@font-face {
+    font-family: 'Tourney';
+    src: url("fonts/tourney/Tourney-VariableFont_wdth,wght.ttf") format('truetype'),
+    url("fonts/tourney/Tourney-VariableFont_wdth,wght.woff") format('woff'),
+    url("fonts/tourney/Tourney-VariableFont_wdth,wght.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Staatliches';
+    src: url("fonts/staatliches/Staatliches-Regular.ttf") format('truetype'),
+    url("fonts/staatliches/Staatliches-Regular.woff") format('woff'),
+    url("fonts/staatliches/Staatliches-Regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Francois One';
+    src: url("fonts/francois-one/FrancoisOne-Regular.ttf") format('truetype'),
+    url("fonts/francois-one/FrancoisOne-Regular.woff") format('woff'),
+    url("fonts/francois-one/FrancoisOne-Regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Farro';
+    src: url("fonts/farro/Farro-Light.ttf") format('truetype'),
+    url("fonts/farro/Farro-Light .woff") format('woff'),
+    url("fonts/farro/Farro-Light.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url("fonts/pt_sans/PTSans-Regular.ttf") format('truetype'),
+    url("fonts/pt_sans/PTSans-Regular.woff2") format('woff2'),
+    url("fonts/pt_sans/PTSans-Italic.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans-Bold';
+    src: url("fonts/pt_sans/PTSans-Bold.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
