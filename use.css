@@ -1,0 +1,132 @@
+@import "styles/reset.css";
+
+@import "styles/fonts.css";
+
+
+main {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+}
+
+.section {
+    padding-bottom: 70px;
+}
+
+
+/*NAVIGATION*/
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 13px;
+    padding-bottom: 83px;
+}
+
+.language {
+    font-family: 'Tourney', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    padding-right: 50px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navigation .nav-item {
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.nav-item:hover:not(.slash) {
+    opacity: 0.5;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.line {
+    border-bottom: 10px solid #000000;
+    width: 100px;
+}
+
+.customers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    grid-auto-rows: auto;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.flip-card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 270px;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: .5s;
+}
+
+.flip-card-front {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: .5s;
+}
+
+.flip-card-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: .5s;
+}
+
+.flip-card:hover .flip-card-front {
+    transform: rotateX(-180deg)
+}
+
+.flip-card:hover .flip-card-back {
+    transform: rotateX(0deg);
+}

@@ -25,13 +25,24 @@ main {
 
 
 /*NAVIGATION*/
+.header {
+    position: relative;
+}
 
 .navigation {
+    width: 1170px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 13px;
-    padding-bottom: 83px;
+    padding: 13px 5px 80px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.navigation img {
+    text-align: right;
 }
 
 .language {
@@ -60,6 +71,42 @@ main {
 }
 
 /*MAIN*/
+
+.content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    justify-items: center;
+    margin-top: 152px;
+}
+
+.left-content {
+    padding-top: 31px;
+    position: sticky;
+    align-self: start;
+    right: 0;
+    top: 152px;
+}
+
+.right-content {
+    background-image: url('assets/bg-picture.svg');
+    background-repeat: no-repeat;
+    background-position: right 163px;
+    background-attachment: fixed;
+}
+
+.divider {
+    width: 100px;
+    height: 8px;
+    background: #000000;
+    margin-left: 0;
+}
+
+.left-content .title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 70px;
+}
 
 .title {
     font-family: 'Francois One', sans-serif;
