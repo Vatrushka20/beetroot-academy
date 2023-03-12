@@ -2,6 +2,10 @@
 
 @import "styles/fonts.css";
 
+body {
+    background-color: #FFFFFF;
+}
+
 main {
     font-family: 'PT Sans', sans-serif;
     font-weight: 400;
@@ -16,7 +20,7 @@ main {
     margin: auto;
     padding-right: 20px;
     padding-left: 20px;
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
 }
 
 .section {
@@ -30,11 +34,11 @@ main {
 }
 
 .navigation {
-    width: 1170px;
+    /*width: 1200px;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 13px 5px 80px;
+    padding: 13px 0 80px;
     position: fixed;
     top: 0;
     z-index: 1;
@@ -43,6 +47,7 @@ main {
 
 .navigation img {
     text-align: right;
+    padding-right: 40px;
 }
 
 .language {
@@ -78,6 +83,7 @@ main {
     grid-gap: 30px;
     justify-items: center;
     margin-top: 152px;
+    position: relative;
 }
 
 .left-content {
@@ -88,7 +94,7 @@ main {
     top: 152px;
 }
 
-.right-content {
+main {
     background-image: url('assets/bg-picture.svg');
     background-repeat: no-repeat;
     background-position: right 163px;
@@ -106,6 +112,10 @@ main {
     padding-bottom: 10px;
     border-bottom: 1px solid #BDBDBD;
     margin-bottom: 70px;
+}
+
+.left-content .title:hover {
+    opacity: 0.5;
 }
 
 .title {
