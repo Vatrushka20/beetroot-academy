@@ -31,7 +31,6 @@ a {
 a,
 button {
     cursor: pointer;
-    outline: none;
 }
 
 ol,
@@ -46,7 +45,7 @@ img {
 
 input,
 textarea {
-    -webkit-user-select: auto;
+    /*-webkit-user-select: auto;*/
 }
 
 textarea {
