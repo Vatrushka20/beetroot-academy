@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;500&display=swap"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="assets/icon-form.png" rel="icon">
+    <title>Web-Forms</title>
+</head>
+<body>
+<header>
+    <nav class="drop-menu">
+        <ul class="menu">
+            <li>
+                <a href="#">Form</a>
+                <ul class="dropdown">
+                    <li><a href="form-one.html">Form-one</a></li>
+                    <li><a href="form-two.html">Form-two</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+<main class="form-center">
+
+
+    <form class="form wrapper" action="#">
+
+        <h2 class="title">Create an Account</h2>
+
+        <div class="block-half">
+            <label class="label" for="first-name">First Name
+                <input id="first-name" type="text" required>
+            </label>
+
+            <label class="label" for="last-name">Last Name
+                <input id="last-name" type="text" required>
+            </label>
+        </div>
+
+        <label class="label" for="email">E-mail
+            <input class="email" id="email" type="email" required>
+            <span class="description">We'll never share your email with anyone else.</span>
+        </label>
+
+
+        <div class="gender">
+
+            <div class="radio-group">
+                <label class="label-radio">
+                    <input class="real-radio" type="radio" value="male" name="gender" checked>
+                    <span class="custom-radio"></span>
+                    Male
+                </label>
+            </div>
+
+            <div class="radio-group">
+                <label class="label-radio">
+                    <input class="real-radio" type="radio" value="female" name="gender">
+                    <span class="custom-radio"></span>
+                    Female
+                </label>
+            </div>
+        </div>
+
+
+        <div class="block-half">
+            <div class="container">
+                <div class="select-container">
+                    <label class="custom-select " for="country">Country
+                        <select id="country" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="USA">USA</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <label class="label" for="city">City
+                <input id="city" type="text" required>
+            </label>
+
+        </div>
+
+        <button class="btn" type="submit">Sign Up</button>
+
+        <p class="description center">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+            <span class="color">Terms of Use</span> and
+            <span class="color">Privacy Policy</span>
+        </p>
+        <span class="line"></span>
+
+        <div class="block">
+            <p class="center">Have an account?</p>
+            <p class="color">Log In</p>
+        </div>
+
+    </form>
+</main>
+</body>
+</html>

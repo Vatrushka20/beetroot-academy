@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;500&display=swap"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="assets/icon-form.png" rel="icon">
+    <title>Web-Forms</title>
+</head>
+<body>
+
+<header>
+    <nav class="drop-menu">
+        <ul class="menu">
+            <li>
+                <a href="#">Form</a>
+                <ul class="dropdown">
+                    <li><a href="form-one.html">Form-one</a></li>
+                    <li><a href="form-two.html">Form-two</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<main class="form-center">
+    <form class="form wrapper" action="#">
+
+        <h2 class="title">Profile</h2>
+
+        <div class="user-pic">
+
+            <img src="assets/user-pic.svg" alt="user-pic">
+
+            <label class="label-file" for="file">
+                <input type="file" id="file" accept="image/*">
+                <img src="assets/form-photo-camera.svg" alt="">
+
+            </label>
+            <span class="description">Up to 1 MB (300x300 px)</span>
+            <label class="trash">
+                <button class="reset" type="reset"></button>
+                <img src="assets/form-trash.svg">
+            </label>
+        </div>
+
+
+        <div class="block-half">
+
+            <label class="label" for="name">Name
+                <input type="text" id="name" required>
+            </label>
+
+            <label class="label" for="email">Email
+                <input type="email" id="email">
+            </label>
+        </div>
+
+        <div class="block-half">
+            <div class="container">
+                <div class="select-container">
+                    <label class="custom-select " for="country">Country
+                        <select id="country" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="USA">USA</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <label class="label" for="city">City
+                <input id="city" type="text" required>
+            </label>
+        </div>
+
+        <div class="block-half">
+
+            <label class="label" for="zip">Zip Code
+                <input id="zip" name="zip" type="text" pattern="[0-9]*">
+            </label>
+
+            <label class="label" for="tel">Phone Number
+                <input id="tel" type="tel" name="tel" minlength="10" maxlength="14" required>
+            </label>
+        </div>
+
+        <button class="button-update btn" type="submit">Update</button>
+    </form>
+</main>
+</body>
+</html>

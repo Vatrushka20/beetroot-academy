@@ -1,7 +1,8 @@
 @import "styles/reset.css";
 
 html {
-    background-image: url("assets/7.png");
+    background-color: #F7F7F7;
+    background-image: url("assets/background-picture.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -19,7 +20,7 @@ body {
 .wrapper {
     width: 100%;
     max-width: 570px;
-    margin: 100px auto;
+    margin: auto;
 }
 
 .form-center {
@@ -37,11 +38,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, .5);
+    /*-webkit-backdrop-filter: hue-rotate(700deg);*/
+    /*backdrop-filter: hue-rotate(700deg);*/
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 6px;
-    max-height: 590px;
-    padding: 35px 35px 16px 35px;
+    padding: 35px 35px 16px;
+    height: 590px;
+    margin-top: 60px;
 }
 
 .block-half {
@@ -49,7 +53,6 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
 }
-
 
 .title {
     font-weight: 500;
@@ -64,25 +67,22 @@ body {
     color: #969696;
 }
 
-/*.block {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*}*/
-
-.block .gender {
-    display: flex;
-    flex-direction: row;
-    gap: 21px;
-    align-items: center;
+.email {
+    margin-bottom: 7px;
 }
 
-.btn {
-    color: #FFFFFF;
-    font-weight: 500;
-    background: #007BFF;
-    border: 1px solid #E4E4E4;
-    border-radius: 6px;
-    padding: 8px 10px;
+.gender {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 21px;
+}
+
+.block {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .center {
@@ -94,16 +94,235 @@ body {
     color: #007BFF;
 }
 
+.color:hover {
+    cursor: pointer;
+}
+
+.line {
+    border-top: 1px solid #E4E4E4;
+}
 
 input, select, button {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
-    /*display: inline-block;*/
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+input, select {
+    margin: 7px 0 0;
+}
+
+input, select, button, label {
+    cursor: pointer;
+}
+
+input:hover,
+select:hover,
+button:hover,
+.label-file:hover,
+.trash:hover {
+    border: 1px solid #007BFF;
+}
+
+input:focus:not(input[type=radio]),
+select:focus, button:focus,
+.label-file:active,
+.trash:active {
+    border: 1px solid #007BFF;
+    box-shadow: 0 0 3px #007BFF;
+}
+
+input:focus:not(input[type=radio]) {
+    cursor: text;
+}
+
+.btn {
+    color: #FFFFFF;
+    font-weight: 500;
+    background: #007BFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+}
+
+.real-radio {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.custom-radio {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    vertical-align: text-top;
+    margin-right: 8px;
+}
+
+.custom-radio::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url("assets/custom-radio.svg");
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.real-radio:checked + .custom-radio::before {
+    display: inline-block;
+}
+
+select {
+    color: rgba(84, 84, 84, .5);
+}
+
+.container {
+    position: relative;
+}
+
+.select-container select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.select-container:after {
+    content: url("assets/select-icon.svg");
+    position: absolute;
+    right: 5px;
+    top: 55%;
+    transform: translate(-55%);
+    pointer-events: none;
+}
+
+/*SECOND FORM*/
+
+.user-pic {
+    position: relative;
+}
+
+input[type=file] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -100;
+    position: absolute;
+}
+
+.label-file {
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    padding: 12px 11px;
+    width: 27%;
+    position: absolute;
+    top: 11px;
+    left: 100px;
+    display: flex;
+    justify-content: flex-end
+}
+
+.user-pic .description {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+}
+
+.reset {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -100;
+    position: absolute;
+}
+
+.trash {
+    position: absolute;
+    top: 11px;
+    left: 248px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    padding: 12px 11px;
+    display: flex;
+    justify-content: flex-end
+}
+
+.button-update {
+    width: 30%;
+}
+
+ul {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(252, 252, 252, .5);
+    width: 170px;
+    font-weight: 500;
+    font-size: 24px;
+    border-radius: 6px;
+
+    /*margin-left: 10px;*/
+    /*margin-top: 10px;*/
+}
+
+ul.dropdown li {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 20px 50px;
+    color: #1C1C1C;
+    text-align: center;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    background: #b0abab;
+    border-radius: 6px;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+.drop-menu {
+    padding-top: 10px;
+    padding-left: 10px;
+}
 
 @media screen and (max-width: 570px) {
     .wrapper {
