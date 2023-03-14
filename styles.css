@@ -1,7 +1,7 @@
 @import "styles/reset.css";
 
 html {
-    background-color: #F7F7F7;
+    /*background-color: #F7F7F7;*/
     background-image: url("assets/background-picture.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,20 +38,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, .5);
-    /*-webkit-backdrop-filter: hue-rotate(700deg);*/
-    /*backdrop-filter: hue-rotate(700deg);*/
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 6px;
     padding: 35px 35px 16px;
     height: 590px;
     margin-top: 60px;
-}
-
-.block-half {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
 }
 
 .title {
@@ -67,6 +59,19 @@ body {
     color: #969696;
 }
 
+.block {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
 .email {
     margin-bottom: 7px;
 }
@@ -78,13 +83,6 @@ body {
     gap: 21px;
 }
 
-.block {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
 .center {
     text-align: center;
 }
@@ -92,10 +90,11 @@ body {
 .color {
     line-height: 18px;
     color: #007BFF;
+    cursor: pointer;
 }
 
 .color:hover {
-    cursor: pointer;
+    opacity: .7;
 }
 
 .line {
@@ -151,6 +150,8 @@ input:focus:not(input[type=radio]) {
     color: #007BFF;
 }
 
+/*RADIO BTN*/
+
 .real-radio {
     width: 0;
     height: 0;
@@ -186,6 +187,8 @@ input:focus:not(input[type=radio]) {
 .real-radio:checked + .custom-radio::before {
     display: inline-block;
 }
+
+/*SELECT*/
 
 select {
     color: rgba(84, 84, 84, .5);
@@ -269,6 +272,11 @@ input[type=file] {
 
 /*DROP MENU*/
 
+.drop-menu {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
 ul {
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -285,7 +293,7 @@ ul.dropdown li {
     font-size: 15px;
 }
 
-ul li {
+.menu li {
     display: inline-block;
     position: relative;
 }
@@ -316,11 +324,6 @@ ul li a:hover {
 
 ul li:hover ul.dropdown {
     display: block;
-}
-
-.drop-menu {
-    padding-top: 10px;
-    padding-left: 10px;
 }
 
 @media screen and (max-width: 570px) {
