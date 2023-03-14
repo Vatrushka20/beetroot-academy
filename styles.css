@@ -120,7 +120,8 @@ input:hover,
 select:hover,
 button:hover,
 .label-file:hover,
-.trash:hover {
+.trash:hover,
+.custom-radio:hover {
     border: 1px solid #007BFF;
 }
 
