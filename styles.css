@@ -1,8 +1,8 @@
 @import "styles/reset.css";
 
 html {
-    /*background-color: #F7F7F7;*/
-    background-image: url("assets/background-picture.png");
+    background-color: #F7F7F7;
+    /*background-image: url("assets/background-picture.png");*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -37,12 +37,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, 1);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 6px;
     padding: 35px 35px 16px;
-    height: 590px;
     margin-top: 60px;
 }
 
@@ -81,6 +80,8 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 21px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .center {
@@ -103,9 +104,10 @@ body {
 
 input, select, button {
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
+    max-height: 38px;
 }
 
 input, select {
@@ -215,6 +217,9 @@ select {
 }
 
 /*SECOND FORM*/
+.form-two {
+    height: 590px;
+}
 
 .user-pic {
     position: relative;
@@ -232,13 +237,13 @@ input[type=file] {
     background: #FFFFFF;
     border: 1px solid #E4E4E4;
     border-radius: 6px;
-    padding: 12px 11px;
+    padding: 9px 9px;
     width: 27%;
     position: absolute;
     top: 11px;
     left: 100px;
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
 }
 
 .user-pic .description {
@@ -262,7 +267,7 @@ input[type=file] {
     background: #FFFFFF;
     border: 1px solid #E4E4E4;
     border-radius: 6px;
-    padding: 12px 11px;
+    padding: 9px 11px;
     display: flex;
     justify-content: flex-end
 }
@@ -281,7 +286,8 @@ input[type=file] {
 ul {
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    background: rgba(252, 252, 252, .5);
+    background: #007BFF;
+    /*background: rgba(252, 252, 252, 1);*/
     width: 170px;
     font-weight: 500;
     font-size: 24px;
@@ -325,6 +331,10 @@ ul li a:hover {
 
 ul li:hover ul.dropdown {
     display: block;
+}
+
+.margin {
+    padding-top: 2px;
 }
 
 @media screen and (max-width: 570px) {
