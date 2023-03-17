@@ -1,0 +1,26 @@
+@import "variables";
+
+@mixin fonts($family, $weight, $size, $line-height, $color) {
+  font-family: $family, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin button {
+  border: 1px solid $color-gold;
+}
+
+@mixin bigRectangle {
+  width: 20px;
+  height: 4px;
+  background: $color-gold;
+}
+
+@mixin miniRectangle {
+  width: 10px;
+  height: 4px;
+  background: $color-gold;
+
+}

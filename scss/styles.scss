@@ -1,2 +1,139 @@
-@import "styles/normalize.css";
+@import url(../styles/normalize.css);
+@import "styles/mixins";
+@import "styles/variables";
 
+html {
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+
+.header {
+
+  .sub-text {
+    @include fonts('Raleway', 500, 18px, 24px, $sub-text-color);
+    text-transform: uppercase;
+    padding-top: 121px;
+    padding-bottom: 15px;
+  }
+
+  .title {
+    @include fonts('Roboto', 900, 60px, 66px, $color-gold);
+    text-transform: uppercase;
+    padding-bottom: 41px;
+  }
+
+  .bonfire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before,
+    &:after {
+      flex: 1;
+      content: '';
+      max-width: 210px;
+      height: 1px;
+      background: $color-gold;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+
+.content {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 85px;
+  margin-bottom: 122px;
+
+  .divider {
+    border-left: 1px solid $color-gold;
+    height: 560px;
+  }
+
+  .right-content {
+
+    .name {
+      @include fonts('Roboto', 900, 36px, 42px, $light-grey-color);
+    }
+
+    .line {
+      width: 100px;
+      height: 1px;
+      background: $color-gold;
+      margin-top: 30px;
+      display: inline-block;
+    }
+
+    .position {
+      @include fonts('Raleway', 400, 24px, 36px, $light-grey-color);
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+
+    }
+  }
+
+}
+
+.description {
+  @include fonts('Raleway', 500, 14px, 24px, $general-text-color);
+  max-width: 430px;
+  padding-top: 49px;
+  padding-bottom: 20px;
+}
+
+.decor-rectangle {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  .mini-rectangle {
+    @include miniRectangle;
+  }
+
+  .big-rectangle {
+    @include bigRectangle;
+  }
+}
+
+.btn {
+  @include fonts('Open Sans', 700, 14px, 14px, $light-grey-color);
+  text-transform: uppercase;
+  @include button;
+  padding: 5px 10px;
+  display: block;
+  margin: auto;
+
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+}
+
+}
+
+
+@media screen and (max-width: 1170px) {
+  .wrapper {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}

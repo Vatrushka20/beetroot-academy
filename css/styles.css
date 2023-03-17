@@ -1,1 +1,156 @@
-@import url(styles/normalize.css);
+@import url(../styles/normalize.css);
+
+html {
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.header .sub-text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #898F8F;
+    text-transform: uppercase;
+    padding-top: 121px;
+    padding-bottom: 15px;
+}
+
+.header .title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 66px;
+    color: #FFCC00;
+    text-transform: uppercase;
+    padding-bottom: 41px;
+}
+
+.header .bonfire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .bonfire:before, .header .bonfire:after {
+    flex: 1;
+    content: '';
+    max-width: 210px;
+    height: 1px;
+    background: #FFCC00;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.content {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 85px;
+    margin-bottom: 122px;
+}
+
+.content .divider {
+    border-left: 1px solid #FFCC00;
+    height: 560px;
+}
+
+.content .right-content .name {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    color: #666666;
+}
+
+.content .right-content .line {
+    width: 100px;
+    height: 1px;
+    background: #FFCC00;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.content .right-content .position {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #666666;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.content .right-content .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.content .right-content .social-media .svg:hover .stroke {
+    stroke: #FFCC00;
+}
+
+.content .right-content .social-media:hover .svg:hover .icon:hover {
+    fill: #FFCC00;
+}
+
+.content .right-content .description {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333333;
+    max-width: 430px;
+    padding-top: 49px;
+    padding-bottom: 20px;
+}
+
+.content .right-content .decor-rectangle {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.content .right-content .decor-rectangle .mini-rectangle {
+    width: 10px;
+    height: 4px;
+    background: #FFCC00;
+}
+
+.content .right-content .decor-rectangle .big-rectangle {
+    width: 20px;
+    height: 4px;
+    background: #FFCC00;
+}
+
+.content .right-content .btn {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
+    text-transform: uppercase;
+    border: 1px solid #FFCC00;
+    padding: 5px 10px;
+    display: block;
+    margin: auto;
+}
+
+.content .right-content .btn:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 1170px) {
+    .wrapper {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
