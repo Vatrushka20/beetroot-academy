@@ -19,7 +19,7 @@ html {
 
 .header {
 
-  .sub-text {
+  &__sub-text {
     @include fonts('Raleway', 500, 18px, 24px, $sub-text-color);
     text-transform: uppercase;
     padding-top: 121px;
@@ -59,9 +59,45 @@ html {
   gap: 85px;
   margin-bottom: 122px;
 
+  .left-content {
+    position: relative;
+
+    .square-left-top {
+      position: absolute;
+      @include border-top;
+      @include border-left;
+      top: -15px;
+      left: -15px;
+    }
+    .square-left-bottom {
+      position: absolute;
+      @include border-bottom;
+      @include border-left;
+      bottom: -15px;
+      left: -15px;
+    }
+
+    .square-right-top {
+      position: absolute;
+      @include border-top;
+      @include border-right;
+      top: -15px;
+      right: -15px;
+    }
+
+    .square-right-bottom {
+      position: absolute;
+      @include border-bottom;
+      @include border-right;
+      bottom: -15px;
+      right: -15px;
+    }
+  }
+
   .divider {
     border-left: 1px solid $color-gold;
     height: 560px;
+    margin-left: 30px;
   }
 
   .right-content {
@@ -98,7 +134,6 @@ html {
       }
     }
   }
-
 }
 
 .description {
@@ -119,18 +154,19 @@ html {
   }
 
   .big-rectangle {
-    @include bigRectangle;
+    width: 20px;
+    height: 4px;
+    background: $color-gold;
   }
 }
 
 .btn {
   @include fonts('Open Sans', 700, 14px, 14px, $light-grey-color);
   text-transform: uppercase;
-  @include button;
+  border: $border;
   padding: 5px 10px;
   display: block;
   margin: auto;
-
 
   &:hover {
     background-color: $color-gold;
@@ -144,3 +180,4 @@ html {
     padding-left: 40px;
   }
 }
+

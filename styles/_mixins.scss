@@ -8,19 +8,28 @@
   color: $color;
 }
 
-@mixin button {
-  border: 1px solid $color-gold;
-}
-
-@mixin bigRectangle {
-  width: 20px;
-  height: 4px;
-  background: $color-gold;
-}
-
 @mixin miniRectangle {
   width: 10px;
   height: 4px;
   background: $color-gold;
+}
 
+@mixin border-top {
+  border-top: $border;
+  padding: 50px;
+  width: 100px;
+}
+
+@mixin border-bottom {
+  border-bottom: $border;
+  padding: 50px;
+  width: 100px;
+}
+
+@mixin border-right {
+  border-right: $border;
+}
+
+@mixin border-left {
+  border-left: $border;
 }
