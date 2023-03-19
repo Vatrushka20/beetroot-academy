@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/Lato-Bold.woff2') format('woff2'),
+  url('../fonts/lato/Lato-Bold.woff') format('woff'),
+  url('../fonts/lato/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/Lato-Regular.woff2') format('woff2'),
+  url('../fonts/lato/Lato-Regular.woff') format('woff'),
+  url('../fonts/lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/redHatDisplay/RedHatDisplay-Medium.woff2') format('woff2'),
+  url('../fonts/redHatDisplay/RedHatDisplay-Medium.woff') format('woff'),
+  url('../fonts/redHatDisplay/RedHatDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/redHatDisplay/RedHatDisplay-SemiBold.woff2') format('woff2'),
+  url('../fonts/redHatDisplay/RedHatDisplay-SemiBold.woff') format('woff'),
+  url('../fonts/redHatDisplay/RedHatDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../fonts/redHatDisplay/RedHatDisplay-Regular.woff2') format('woff2'),
+  url('../fonts/redHatDisplay/RedHatDisplay-Regular.woff') format('woff'),
+  url('../fonts/redHatDisplay/RedHatDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
