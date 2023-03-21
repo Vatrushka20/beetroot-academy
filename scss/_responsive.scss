@@ -2,7 +2,7 @@ $screen-sm-min: 320px;
 
 $screen-md-min: 768px;
 
-$screen-xl-min: 1440px;
+$screen-xl-min: 1439px;
 
 
 // Small devices
@@ -28,7 +28,7 @@ $screen-xl-min: 1440px;
 
 // Custom width devices
 @mixin cwd($screen) {
-  @media (min-width: $screen) {
+  @media (max-width: $screen) {
     @content;
   }
 }
@@ -38,4 +38,8 @@ $screen-xl-min: 1440px;
   @media (min-width: $min) and (max-width: $max) {
     @content;
   }
+}
+
+@include rwd(580px, 610px) {
+
 }

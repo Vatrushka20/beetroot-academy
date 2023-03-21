@@ -4,3 +4,727 @@
 @import "./responsive";
 @import "fonts";
 
+
+html {
+  background-color: $base-white;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.heading {
+  @include latoFonts(16px, $gray-500, 400);
+  letter-spacing: 0.1em;
+
+  @include rwd(580px, 720px) {
+    font-size: 14px;
+  }
+}
+
+.description {
+  @include latoFonts(16px, $gray-700, 400);
+  line-height: 27px;
+  letter-spacing: 0.05em;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  align-items: center;
+
+  &__title {
+    @include redHatDisplayFonts(28px, 600);
+    letter-spacing: 0.1em;
+  }
+}
+
+.head-heading {
+  @include latoFonts(12px, $gray-500, 400);
+  display: flex;
+  justify-content: space-between;
+
+  @include sm {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+.title {
+  @include redHatDisplayFonts(48px, 400);
+  letter-spacing: 0.05em;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 44px;
+  padding-bottom: 44px;
+
+  @include cwd(849px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @include md {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 84px;
+    align-items: center;
+    cursor: pointer;
+
+    @include md {
+      gap: 41px;
+      align-items: flex-end;
+    }
+
+    @include sm {
+      gap: 20px;
+    }
+
+
+    .list {
+      @include latoFonts(14px, $base-black, 400);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      display: flex;
+      gap: 42px;
+
+      @include cwd(849px) {
+        display: none;
+      }
+
+      &__item {
+
+        &:hover {
+          border-bottom: 1px solid $base-black;
+        }
+      }
+    }
+  }
+
+  &__search {
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__hamburger {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+
+    @include cwd(849px) {
+      width: 34px;
+      height: 20px;
+      opacity: 1;
+      z-index: 1;
+      cursor: pointer;
+      position: relative;
+
+      .check-menu {
+        cursor: pointer;
+        width: 40px;
+        height: 30px;
+        opacity: 0;
+        z-index: -100;
+
+        &:checked ~ .main-menu {
+          max-height: 500px;
+          font-size: 16px;
+        }
+
+        &:checked ~ .first {
+          display: none;
+        }
+
+        &:checked ~ .second {
+          transform: rotate(45deg);
+        }
+
+        &:checked ~ .third {
+          transform: rotate(-45deg);
+        }
+
+        &:checked ~ .fourth {
+          display: none;
+        }
+      }
+
+      label {
+      }
+
+      .burger-line {
+        position: absolute;
+        top: -3px;
+        right: 0;
+        width: 34px;
+        height: 2px;
+        background: $base-black;
+      }
+
+      .second, .third {
+        top: 6px;
+      }
+
+      .fourth {
+        top: 15px;
+      }
+
+      .main-menu {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        //width: 100%;
+        bottom: 0;
+        right: 0;
+        transform: translateY(100%);
+        text-align: center;
+        margin-bottom: -10px;
+        max-height: 0;
+        font-size: 0;
+        overflow: hidden;
+        transition: .5s all;
+
+        a {
+          @include latoFonts(14px, $base-black, 400);
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          cursor: pointer;
+          display: block;
+          width: 300px;
+          padding: 10px;
+          color: $base-black;
+          text-decoration: none;
+          border-top: 1px solid $base-black;
+          background-color: rgba(255, 255, 255, 1);
+
+          &:hover {
+            background-color: #CCCCCC;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+.first-screen {
+  background-image: url("../assets/bg-image.svg");
+  background-repeat: no-repeat;
+  height: 600px;
+
+  @include md {
+    background-image: url("../assets/bg-image-screen700.svg");
+    height: 320px;
+  }
+
+  @include sm {
+    background-image: url("../assets/bg-image-screen-320.svg");
+    height: 500px;
+  }
+
+  &__title {
+    @include redHatDisplayFonts(48px, 600);
+    max-width: 770px;
+    line-height: 64px;
+    letter-spacing: 0.05em;
+    padding-top: 100px;
+    text-align: left;
+
+    @include md {
+      padding-top: 30px;
+      max-width: 700px;
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    @include sm {
+      padding-top: 70px;
+      max-width: 300px;
+      font-size: 30px;
+    }
+  }
+}
+
+
+.blog {
+
+  .title {
+    padding-top: 90px;
+    padding-bottom: 50px;
+
+    @include md {
+      padding-top: 70px;
+    }
+
+    @include sm {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px;
+
+    @include sm {
+
+      .reverse {
+        grid-template-areas:
+        "grid-up"
+        "grid-down";
+
+        .up {
+          grid-area: grid-down;
+        }
+
+        .down {
+          grid-area: grid-up;
+        }
+      }
+    }
+
+
+    .blog__content-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+      align-items: center;
+
+      @include md {
+        grid-gap: 20px;
+      }
+
+      @include sm {
+        grid-template-columns: 1fr;
+        grid-gap: 37px;
+      }
+
+    }
+
+
+    .blog-subtitle {
+      @include redHatDisplayFonts(23px, 500);
+      letter-spacing: 0.1em;
+      padding-top: 30px;
+      padding-bottom: 15px;
+      line-height: 38px;
+
+      @include md {
+        font-size: 22px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+
+      @include sm {
+        padding-top: 30px;
+      }
+
+      @include rwd(580px, 720px) {
+        font-size: 18px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        line-height: 34px;
+      }
+
+    }
+
+    .description {
+      padding-top: 50px;
+
+      @include md {
+        padding-top: 30px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      @include sm {
+        padding-top: 40px;
+      }
+
+      @include rwd(580px, 720px) {
+        font-size: 12px;
+        line-height: 22px;
+        padding-top: 24px;
+      }
+    }
+  }
+}
+
+
+.latest-posts {
+  padding-top: 90px;
+  padding-bottom: 112px;
+
+  @include md {
+    padding-top: 70px;
+    padding-bottom: 66px;
+  }
+
+  @include sm {
+    padding-bottom: 70px;
+  }
+
+  .head {
+    @include sm {
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+
+    @include md {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+    }
+
+    @include sm {
+      grid-gap: 50px;
+    }
+  }
+
+  .content-posts {
+
+    @include md {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      &:nth-child(2) {
+        grid-template-areas:
+        "grid-left grid-right";
+
+        .left {
+          grid-area: grid-right;
+        }
+
+        .right {
+          grid-area: grid-left;
+        }
+      }
+
+      @include sm {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+
+        &:nth-last-child(2) {
+          grid-template-areas:
+                  "grid-left"
+                  "grid-right";
+
+          .left {
+            grid-area: grid-left;
+          }
+
+          .right {
+            grid-area: grid-right;
+          }
+        }
+      }
+    }
+
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 25px;
+      padding-bottom: 26px;
+
+      @include md {
+        padding-top: 0;
+      }
+
+      @include sm {
+        padding-bottom: 25px;
+      }
+    }
+
+    &__subtitle {
+      @include redHatDisplayFonts(22px, 500);
+      padding-bottom: 20px;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+
+.popular {
+
+  .head {
+    padding-bottom: 46px;
+
+    @include sm {
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+
+    @include md {
+      grid-gap: 20px;
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+    }
+
+    .popular-info {
+
+      &__head {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        @include sm {
+          padding-top: 22px;
+          padding-bottom: 12px;
+        }
+      }
+
+      &__subtitle {
+        @include redHatDisplayFonts(24px, 500);
+        line-height: 40px;
+        letter-spacing: 0.1em;
+        padding-bottom: 20px;
+
+        @include md {
+          font-size: 22px;
+        }
+
+        @include sm {
+          line-height: 37px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  text-align: center;
+  cursor: pointer;
+  padding-top: 54px;
+
+  @include md {
+    padding-top: 65px;
+  }
+
+  @include sm {
+    padding-top: 50px;
+  }
+
+  &__btn {
+    @include latoFonts(16px, $base-white, 700);
+    letter-spacing: 0.1em;
+    padding: 10px 45px;
+    background: $gray-700;
+
+    &:hover {
+      background-color: $base-black;
+    }
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 230px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  @include md {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include sm {
+    gap: 25px;
+  }
+
+  &__leftContent {
+    @include redHatDisplayFonts(23px, 400);
+    line-height: 38px;
+    letter-spacing: 0.1em;
+
+    @include sm {
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+
+  &__rightContent {
+    @include latoFonts(19px, $gray-700, 400);
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+
+    @include md {
+      text-align: right;
+      gap: 35px;
+    }
+
+    @include sm {
+      text-align: start;
+      font-size: 18px;
+    }
+
+    @include rwd(510px, 650px) {
+      text-align: start;
+      font-size: 18px;
+    }
+  }
+}
+
+.footer {
+  background-color: $bg-footer;
+  padding-bottom: 30px;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__leftScreen {
+      .title {
+        padding-top: 70px;
+        padding-bottom: 30px;
+
+        @include sm {
+          font-size: 32px;
+          padding-top: 50px;
+          padding-bottom: 20px;
+        }
+      }
+
+      .contacts {
+        @include latoFonts(16px, $base-black, 400);
+        letter-spacing: 0.1em;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        cursor: pointer;
+
+        @include sm {
+          font-size: 18px;
+        }
+
+        .contact {
+
+          &:hover {
+            opacity: .5;
+          }
+        }
+      }
+    }
+
+    &__rightScreen {
+      display: flex;
+      gap: 23px;
+      padding-top: 125px;
+      justify-content: center;
+
+      @include md {
+        padding-top: 52px;
+      }
+
+      @include sm {
+        padding-top: 40px;
+      }
+
+      .right-content {
+
+        &__svg {
+          cursor: pointer;
+
+          &:hover {
+            background-color: $gray-700;
+
+            .fill {
+              fill: $base-white;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &__copyright {
+    @include latoFonts(12px, $base-black, 400);
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding-top: 26px;
+
+    @include md {
+      padding-top: 40px;
+    }
+
+    @include sm {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+}
+
+
+@media screen and(max-width: 1170px) {
+  .wrapper {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .wrapper {
+    padding-left: 34px;
+    padding-right: 34px;
+
+  }
+}
+
+@media screen and(max-width: 655px) {
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and(max-width: 375px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
