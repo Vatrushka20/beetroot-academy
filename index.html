@@ -35,25 +35,41 @@
             </ul>
 
             <button class="nav__search" type="submit">
-               <img src="assets/search.svg" alt="icon">
+                <img src="assets/search.svg" alt="icon">
             </button>
 
-            <div class="nav__hamburger">
-                <input type="checkbox" id="check-menu" class="check-menu">
-                <label for="check-menu"></label>
-                <span class="burger-line first"></span>
-                <span class="burger-line second"></span>
-                <span class="burger-line third"></span>
-                <span class="burger-line fourth"></span>
-
-                <nav class="main-menu">
-                    <a href="#">home</a>
-                    <a href="#">about</a>
-                    <a href="#">works</a>
-                    <a href="#">blog</a>
-                    <a href="#">contact</a>
-                </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
+
+            <script>
+                const hamburgerElm = document.querySelector(".hamburger");
+                const navElm = document.querySelector(".list");
+
+                hamburgerElm.addEventListener("click", () => {
+                    hamburgerElm.classList.toggle("active");
+                    navElm.classList.toggle("active");
+                });
+            </script>
+
+            <!--            <div class="nav__hamburger">-->
+            <!--                <input type="checkbox" id="check-menu" class="check-menu">-->
+            <!--                <label for="check-menu"></label>-->
+            <!--                <span class="burger-line first"></span>-->
+            <!--                <span class="burger-line second"></span>-->
+            <!--                <span class="burger-line third"></span>-->
+            <!--                <span class="burger-line fourth"></span>-->
+
+            <!--                <nav class="main-menu">-->
+            <!--                    <a href="#">home</a>-->
+            <!--                    <a href="#">about</a>-->
+            <!--                    <a href="#">works</a>-->
+            <!--                    <a href="#">blog</a>-->
+            <!--                    <a href="#">contact</a>-->
+            <!--                </nav>-->
+            <!--            </div>-->
 
         </div>
     </nav>
@@ -72,7 +88,7 @@
         <h2 class="title">Blog</h2>
         <div class="blog__content">
             <div class="blog__content-info reverse">
-                <img  class="up" src="assets/section-blog-arrow.svg" alt="image">
+                <img class="up" src="assets/section-blog-arrow.svg" alt="image">
 
                 <div class="information down">
                     <p class="heading">Technology, Interface Design</p>

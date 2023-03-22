@@ -2,12 +2,17 @@ $screen-sm-min: 320px;
 
 $screen-md-min: 768px;
 
-$screen-xl-min: 1439px;
+$screen-xl-min: 1440px;
 
 
 // Small devices
+//@mixin sm {
+//  @media (max-width: #{$screen-sm-min}) {
+//    @content;
+//  }
+//}
 @mixin sm {
-  @media (max-width: #{$screen-sm-min}) {
+  @media (min-width: 320px) and (max-width: 600px) {
     @content;
   }
 }
