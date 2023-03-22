@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin fonts($family, $weight, $size, $line-height, $color) {
+  font-family: $family, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin latoFonts($size, $color, $font-weight) {
+  font-family: 'Lato', sans-serif;
+  font-weight: $font-weight;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin redHatDisplayFonts($size, $font-weight) {
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: $font-weight;
+  font-size: $size;
+  color: $base-black;
+}
