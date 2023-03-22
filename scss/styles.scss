@@ -1,2 +1,405 @@
-@import "styles/normalize.css";
+@import "/styles/normalize.css";
+@import "./variables";
+@import "./mixins";
+@import "./responsive";
+
+ol,
+ul,
+li,
+menu {
+  list-style: none;
+}
+
+html {
+  @include fontMontserrat(400, 16px, $gray-dark);
+}
+
+body {
+  background-color: $bg-color;
+  height: 100%;
+  position: relative;
+}
+
+//DARK MODE
+//DARK MODE
+//DARK MODE
+
+body.dark {
+  background-color: $blue-darken;
+
+  a {
+    &:hover {
+      .svg-icon {
+        .dark-hover {
+          fill: $white-color;
+        }
+
+      }
+    }
+  }
+
+  .nav-text {
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  .header {
+
+    .toggle {
+      .svg-icon-arrow {
+        .arrow-hover {
+          fill: $blue-darken;
+        }
+
+        .hover-circle {
+          fill: $gray-light;
+        }
+      }
+    }
+  }
+
+  .text {
+    color: $gray-light;
+  }
+
+  svg {
+    fill: currentColor;
+    color: $gray-light;
+  }
+
+  .sidebar {
+    background-color: $blue-dark;
+  }
+
+  .container {
+
+    .content {
+
+      .nav {
+        .nav-content {
+          background-color: $blue-dark;
+          margin: 30px 25px 20px;
+        }
+      }
+
+      .background-image {
+        .white-bg {
+          width: 0;
+          height: 0;
+          opacity: 0;
+          z-index: -1;
+        }
+
+        .dark-bg {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+
+    .svg-pic {
+      &:hover {
+        color: $white-color;
+      }
+    }
+
+  }
+}
+
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+
+  .nav-link {
+    position: relative;
+
+    a {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .badge {
+        position: absolute;
+        top: 5px;
+        left: 35px;
+      }
+
+      &:hover {
+        background-color: $purple-light;
+        color: $white-color;
+
+        .svg-icon {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+}
+
+//SIDEBAR
+//SIDEBAR
+//SIDEBAR
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  padding-top: 30px;
+  background-color: $white-color;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  .header-text {
+    @include fontMontserrat(500, 18px, $purple-dark)
+  }
+
+  .header {
+    position: relative;
+    padding-left: 15px;
+
+    .image-text {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .toggle {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &:hover {
+        .svg-icon-arrow {
+          .arrow-hover {
+            fill: $purple-light;
+          }
+        }
+      }
+    }
+
+    .toggle.open-bar {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      z-index: -10;
+    }
+  }
+
+  .menu-bar {
+    height: 100%;
+
+
+    .dashboard {
+      padding-top: 52px;
+    }
+
+    .menu {
+
+      .categories {
+        padding-top: 40px;
+
+        .title {
+          @include fontMontserrat(400, 16px, $gray-middle);
+          text-transform: uppercase;
+          padding-bottom: 15px;
+          padding-left: 15px;
+        }
+
+        .divider {
+          width: 0;
+          height: 0;
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.sidebar.close {
+  width: 86px;
+
+  .header {
+    .image-text {
+      .image {
+        padding-left: 10px;
+      }
+    }
+
+    .toggle {
+      right: -9px;
+      transform: rotate(180deg);
+      top: 0;
+    }
+  }
+
+
+  .text {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .menu-bar {
+
+    .menu {
+
+      .categories {
+        .title {
+          opacity: 0;
+          width: 0;
+          height: 0;
+          z-index: -1;
+          position: absolute;
+        }
+
+        .divider {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          z-index: 1;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+          padding-bottom: 25px;
+        }
+      }
+
+    }
+  }
+
+  .nav-link {
+    position: relative;
+
+    a {
+      padding-left: 30px;
+
+      .badge {
+        position: absolute;
+        top: 5px;
+        left: 50px;
+      }
+    }
+  }
+}
+
+
+.container {
+  position: relative;
+  left: 220px;
+  height: 100vh;
+  width: calc(100% - 220px);
+  transition: all .5s ease;
+
+  .content {
+
+    .background-image {
+      text-align: center;
+
+      .dark-bg {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 27px 22px 20px;
+      margin: 30px 25px 68px;
+      background-color: $white-color;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+
+      .quick-panel {
+
+
+        .nav-list {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          .nav-item {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .quick-settings {
+        display: flex;
+
+        .lang {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          .lang-item {
+            cursor: pointer;
+          }
+        }
+
+        .settings {
+          display: flex;
+          gap: 20px;
+          padding-left: 60px;
+          padding-right: 50px;
+          align-items: center;
+
+          .set-item {
+            cursor: pointer;
+          }
+        }
+
+        .user-pic {
+          cursor: pointer;
+          position: relative;
+
+          .status-user {
+            position: absolute;
+            top: 26px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  .svg-pic {
+    &:hover {
+      color: $purple-light;
+    }
+  }
+
+}
+
+.sidebar.close ~ .container {
+  left: 86px;
+  width: calc(100% - 86px);
+}
 
