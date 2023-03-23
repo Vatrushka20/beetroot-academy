@@ -3,12 +3,6 @@
 @import "./mixins";
 @import "./responsive";
 
-ol,
-ul,
-li,
-menu {
-  list-style: none;
-}
 
 html {
   @include fontMontserrat(400, 16px, $gray-dark);
@@ -19,96 +13,6 @@ body {
   height: 100%;
   position: relative;
 }
-
-//DARK MODE
-//DARK MODE
-//DARK MODE
-
-body.dark {
-  background-color: $blue-darken;
-
-  a {
-    &:hover {
-      .svg-icon {
-        .dark-hover {
-          fill: $white-color;
-        }
-
-      }
-    }
-  }
-
-  .nav-text {
-    &:hover {
-      color: $white-color;
-    }
-  }
-
-  .header {
-
-    .toggle {
-      .svg-icon-arrow {
-        .arrow-hover {
-          fill: $blue-darken;
-        }
-
-        .hover-circle {
-          fill: $gray-light;
-        }
-      }
-    }
-  }
-
-  .text {
-    color: $gray-light;
-  }
-
-  svg {
-    fill: currentColor;
-    color: $gray-light;
-  }
-
-  .sidebar {
-    background-color: $blue-dark;
-  }
-
-  .container {
-
-    .content {
-
-      .nav {
-        .nav-content {
-          background-color: $blue-dark;
-          margin: 30px 25px 20px;
-        }
-      }
-
-      .background-image {
-        .white-bg {
-          width: 0;
-          height: 0;
-          opacity: 0;
-          z-index: -1;
-        }
-
-        .dark-bg {
-          width: 100%;
-          height: 100%;
-          opacity: 1;
-          z-index: 1;
-        }
-      }
-    }
-
-    .svg-pic {
-      &:hover {
-        color: $white-color;
-      }
-    }
-
-  }
-}
-
 
 .wrapper {
   width: 100%;
@@ -132,11 +36,16 @@ body.dark {
       padding-left: 15px;
       padding-top: 10px;
       padding-bottom: 10px;
+      transition: background-color .2s ease-in;
 
       .badge {
         position: absolute;
         top: 5px;
         left: 35px;
+      }
+
+      .svg-icon {
+        transition: all .1s ease-in;
       }
 
       &:hover {
@@ -165,9 +74,11 @@ body.dark {
   padding-top: 30px;
   background-color: $white-color;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .header-text {
-    @include fontMontserrat(500, 18px, $purple-dark)
+    @include fontMontserrat(500, 18px, $purple-dark);
   }
 
   .header {
@@ -237,10 +148,149 @@ body.dark {
   }
 }
 
+
+.container {
+  position: relative;
+  left: 220px;
+  height: 100vh;
+  width: calc(100% - 220px);
+
+  .content {
+
+    .background-image {
+      text-align: center;
+
+      .dark-bg {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 27px 22px 20px;
+      margin: 30px 25px 68px;
+      background-color: $white-color;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+
+      @include sm {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      @include cwd(580px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .quick-panel {
+
+        .nav-list {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          @include cwd(680px) {
+            gap: 10px;
+          }
+
+          .nav-item {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .quick-settings {
+        display: flex;
+
+        @include sm {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .lang {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          @include cwd(680px) {
+            gap: 10px;
+          }
+
+
+          .lang-item {
+            cursor: pointer;
+          }
+        }
+
+        .settings {
+          display: flex;
+          gap: 20px;
+          padding-left: 60px;
+          padding-right: 50px;
+          align-items: center;
+
+          @include cwd(740px) {
+            padding-left: 30px;
+            padding-right: 25px;
+          }
+          @include cwd(680px) {
+            gap: 10px;
+            padding-left: 20px;
+            padding-right: 10px;
+          }
+          @include sm {
+            padding: 10px 0;
+          }
+
+          .set-item {
+            cursor: pointer;
+          }
+        }
+
+        .user-pic {
+          cursor: pointer;
+          position: relative;
+
+          .status-user {
+            position: absolute;
+            top: 26px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .svg-pic {
+    &:hover {
+      color: $purple-light;
+    }
+  }
+}
+
+//SIDEBAR CLOSE
+//SIDEBAR CLOSE
+//SIDEBAR CLOSE
+
 .sidebar.close {
   width: 86px;
 
+
+  .header-text {
+    display: none;
+  }
+
   .header {
+    display: inline-flex;
+
     .image-text {
       .image {
         padding-left: 10px;
@@ -248,17 +298,17 @@ body.dark {
     }
 
     .toggle {
-      right: -9px;
+      right: -33px;
       transform: rotate(180deg);
-      top: 0;
+      top: 2px;
     }
   }
-
 
   .text {
     opacity: 0;
     width: 0;
     height: 0;
+    display: none;
   }
 
   .menu-bar {
@@ -286,7 +336,6 @@ body.dark {
           padding-bottom: 25px;
         }
       }
-
     }
   }
 
@@ -294,7 +343,9 @@ body.dark {
     position: relative;
 
     a {
-      padding-left: 30px;
+      padding-left: 28px;
+      padding-right: 30px;
+      display: inline-flex;
 
       .badge {
         position: absolute;
@@ -305,98 +356,99 @@ body.dark {
   }
 }
 
+//DARK MODE
+//DARK MODE
+//DARK MODE
 
-.container {
-  position: relative;
-  left: 220px;
-  height: 100vh;
-  width: calc(100% - 220px);
-  transition: all .5s ease;
+body.dark {
+  background-color: $blue-darken;
 
-  .content {
+  .menu-links {
 
-    .background-image {
-      text-align: center;
+    .nav-link {
 
-      .dark-bg {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        z-index: -1;
-      }
-    }
+      a {
+        &:hover {
+          color: $white-color;
 
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 27px 22px 20px;
-      margin: 30px 25px 68px;
-      background-color: $white-color;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-
-      .quick-panel {
-
-
-        .nav-list {
-          display: flex;
-          gap: 20px;
-          align-items: center;
-
-          .nav-item {
-            cursor: pointer;
+          .svg-icon {
+            fill: $white-color;
           }
-        }
-      }
 
-      .quick-settings {
-        display: flex;
-
-        .lang {
-          display: flex;
-          gap: 20px;
-          align-items: center;
-
-          .lang-item {
-            cursor: pointer;
-          }
-        }
-
-        .settings {
-          display: flex;
-          gap: 20px;
-          padding-left: 60px;
-          padding-right: 50px;
-          align-items: center;
-
-          .set-item {
-            cursor: pointer;
-          }
-        }
-
-        .user-pic {
-          cursor: pointer;
-          position: relative;
-
-          .status-user {
-            position: absolute;
-            top: 26px;
-            right: 0;
+          .nav-text {
+            color: $white-color;
           }
         }
       }
     }
   }
 
+  .text {
+    color: $gray-light;
+  }
 
-  .svg-pic {
-    &:hover {
-      color: $purple-light;
+  .header {
+
+    .toggle {
+      .svg-icon-arrow {
+        .arrow-hover {
+          fill: $blue-darken;
+        }
+
+        .hover-circle {
+          fill: $gray-light;
+        }
+      }
     }
   }
 
+
+  svg {
+    fill: currentColor;
+    color: $gray-light;
+  }
+
+  .sidebar {
+    background-color: $blue-dark;
+  }
+
+
+  .container {
+
+    .content {
+
+      .nav {
+        .nav-content {
+          background-color: $blue-dark;
+          margin: 30px 25px 20px;
+        }
+      }
+
+      .background-image {
+        .white-bg {
+          width: 0;
+          height: 0;
+          opacity: 0;
+          z-index: -1;
+        }
+
+        .dark-bg {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+
+    .svg-pic {
+      &:hover {
+        color: $white-color;
+      }
+    }
+  }
 }
+
 
 .sidebar.close ~ .container {
   left: 86px;

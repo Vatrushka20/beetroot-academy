@@ -13,7 +13,7 @@ a {
 
 * {
     box-sizing: border-box;
-    transition: all .1s ease-in;
+    /*transition: all .1s ease-in;*/
     margin: 0;
     padding: 0;
 }
@@ -91,7 +91,7 @@ input:-webkit-autofill:active {
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 3px;
 }
 
 /*/ Track /*/
@@ -101,8 +101,9 @@ input:-webkit-autofill:active {
 
 /*/ Handle /*/
 ::-webkit-scrollbar-thumb {
-    background: #6b7c8a;
+    background: #bdc0c4;
     border-radius: 10px;
+
 }
 
 /*/ Handle on hover /*/
