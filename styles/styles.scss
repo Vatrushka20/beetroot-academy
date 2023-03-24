@@ -1,0 +1,134 @@
+@import "/styles/normalize.css";
+@import "variables";
+@import "mixins";
+@import "responsive";
+
+
+.wrapper {
+  width: 100%;
+  max-width: 864px;
+  //max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  @include fontSans(16px);
+  position: relative;
+
+  @include cwd(600px) {
+    padding-top: 44px;
+    padding-bottom: 230px;
+  }
+
+  @include sm {
+    padding-bottom: 52px;
+  }
+
+  .list {
+    display: flex;
+    gap: 28px;
+    padding-top: 70px;
+    padding-bottom: 144px;
+    padding-right: 77px;
+    justify-content: flex-end;
+
+    @include md {
+      padding-top: 43px;
+      padding-bottom: 230px;
+      gap: 30px;
+    }
+
+    @include cwd(600px) {
+      display: none;
+    }
+  }
+
+  .sm-screen {
+    display: none;
+
+    @include cwd(600px) {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 30px;
+      padding-bottom: 52px;
+      padding-top: 10px;
+    }
+  }
+}
+
+.main {
+
+  .title {
+    @include fonts('Poppins', 500, 90px, $base-black);
+    letter-spacing: -2px;
+    text-align: center;
+
+    @include md {
+      font-size: 72px;
+      letter-spacing: -1.6px;
+    }
+    @include sm {
+      font-size: 36px;
+      letter-spacing: -0.8px;
+    }
+  }
+
+  .description {
+    @include fontSans(22px);
+    line-height: 33px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 47px;
+
+    @include md {
+      padding-top: 22px;
+      padding-bottom: 45px;
+    }
+    @include sm {
+      font-size: 12px;
+      line-height: 18px;
+      margin-right: 52px;
+      margin-left: 52px;
+    }
+  }
+
+  .background {
+    background-image: url("../assets/image-1440.png");
+    background-size: cover;
+    height: 328px;
+    background-repeat: no-repeat;
+
+    @include md {
+      background-image: url("../assets/image-middle.png");
+      height: 512px;
+    }
+
+    @include sm {
+      background-image: url("../assets/image-small.png");
+      height: 284px;
+    }
+  }
+}
+
+@media screen and (max-width: 863px) {
+  .wrapper {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+
+@media screen and(max-width: 768px) {
+  .wrapper {
+    padding-left: 76px;
+    padding-right: 76px;
+  }
+}
+
+@media screen and(max-width: 320px) {
+  .wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

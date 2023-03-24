@@ -12,7 +12,7 @@ $screen-xl-min: 1440px;
 //  }
 //}
 @mixin sm {
-  @media (min-width: 320px) and (max-width: 600px) {
+  @media (max-width: #{$screen-sm-min}){
     @content;
   }
 }

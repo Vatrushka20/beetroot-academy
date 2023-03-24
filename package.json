@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss:compile": "node-sass scss/styles.scss css/styles.css",
+    "scss:compile": "node-sass styles/styles.scss css/styles.css",
     "css:watch": "npm run scss:compile && npm run scss:compile -- -w"
   },
   "author": "",
