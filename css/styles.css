@@ -69,6 +69,9 @@ html, body {
 
 .project-overview .description {
   padding-top: 0; }
+  @media (min-width: 1170px) {
+    .project-overview .description {
+      max-width: 570px; } }
 
 .final-design .description {
   padding-bottom: 70px; }
