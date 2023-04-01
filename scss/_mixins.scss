@@ -1,0 +1,59 @@
+@import "variables";
+@import "fonts";
+
+@mixin fontsLato($weight, $size, $line-height, $color) {
+  font-family: 'Lato', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin lato300 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: $dark-blue;
+  opacity: 0.8;
+}
+
+@mixin fontsPlayfair($font-style, $size, $line-height) {
+  font-family: 'Playfair Display', sans-serif;
+  font-style: $font-style;
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line-height;
+  color: $dark-blue;
+}
+
+@mixin btn($width) {
+  cursor: pointer;
+  @include fontsLato(700, 20px, 20px, $red);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    width: $width;
+    border-bottom: 13px solid rgba(241, 137, 123, .3);
+    top: 11px;
+    left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $red-dark;
+
+    .btn__bg {
+      border-bottom: 13px solid rgba(229, 79, 58, .3);
+    }
+  }
+
+  &:active {
+    transform: translateY(-5px)
+  }
+}
+
+

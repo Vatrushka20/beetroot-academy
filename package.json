@@ -10,6 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^8.0.0"
-  }
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^8.0.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
 }
