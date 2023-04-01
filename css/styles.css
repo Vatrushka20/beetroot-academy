@@ -1044,7 +1044,7 @@ body {
 }
 
 .features {
-  background-image: url("../assets/features-background-image.svg");
+  background-image: url("../assets/features-background-image.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -1069,14 +1069,8 @@ body {
 }
 @media (max-width: 830px) {
   .features {
+    background-image: none;
     height: inherit;
-    background-origin: content-box;
-    background-image: none;
-  }
-}
-@media (max-width: 650px) {
-  .features {
-    background-image: none;
   }
 }
 .features__img {
@@ -1104,6 +1098,7 @@ body {
     grid-row-gap: 60px;
     grid-column-gap: 60px;
     width: 100%;
+    background-color: rgba(187, 188, 193, 0.2);
   }
 }
 @media (max-width: 784px) {
@@ -1127,7 +1122,6 @@ body {
 }
 @media (max-width: 576px) {
   .features__list {
-    padding: 10px 35px 20px 35px;
     grid-row-gap: 30px;
   }
 }

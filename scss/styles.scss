@@ -64,7 +64,6 @@ body {
   @include sm {
     font-size: 16px;
   }
-
 }
 
 .span-green-color {
@@ -637,7 +636,7 @@ body {
 //FEATURES
 
 .features {
-  background-image: url("../assets/features-background-image.svg");
+  background-image: url("../assets/features-background-image.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -651,12 +650,8 @@ body {
     justify-content: center;
   }
   @include cwd(830px) {
+    background-image: none;
     height: inherit;
-    background-origin: content-box;
-    background-image: none;
-  }
-  @include cwd(650px) {
-    background-image: none;
   }
 
   &__img {
@@ -681,6 +676,8 @@ body {
       grid-row-gap: 60px;
       grid-column-gap: 60px;
       width: 100%;
+      background-color: rgba(187,188,193, .2);
+
     }
     @include cwd(784px) {
       padding: 60px 35px;
@@ -695,7 +692,6 @@ body {
       padding: 35px;
     }
     @include sm {
-      padding: 10px 35px 20px 35px;
       grid-row-gap: 30px;
     }
 
