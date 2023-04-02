@@ -15,8 +15,8 @@ a {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 5s ease-in;
+  transition: all 5s ease-in;
 }
 
 *:where(:not(html, iframe, canvas, img, video, audio):not(svg, symbol)) {
@@ -205,6 +205,11 @@ input:-webkit-autofill:active {
   font-weight: bold;
   font-style: normal;
 }
+* {
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
 html,
 body {
   background-color: #FFFFFF;

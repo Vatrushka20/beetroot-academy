@@ -5,6 +5,10 @@
 @import "fonts";
 @import "scss/_hamburger.css";
 
+* {
+  transition: all .1s ease-in;
+}
+
 html,
 body {
   background-color: $bg-color-light;
