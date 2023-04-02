@@ -114,7 +114,7 @@ input:-webkit-autofill:active {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 4px;
 }
 
 /*/ Track /*/
@@ -1565,6 +1565,9 @@ body {
   color: #262A3F;
   letter-spacing: 0.08em;
   opacity: 0.5;
+}
+.contact__form .label input:hover {
+  border-bottom: 1px solid #F1897B;
 }
 .contact__form .label input:focus {
   border-bottom: 1px solid #F1897B;
