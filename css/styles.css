@@ -529,7 +529,8 @@ body {
 .first-screen__content .btn__bg {
   position: absolute;
   width: 112px;
-  border-bottom: 13px solid rgba(241, 137, 123, 0.3);
+  border-bottom: 13px solid #F1897B;
+  opacity: 0.3;
   top: 11px;
   left: 10px;
 }
@@ -537,7 +538,7 @@ body {
   color: #E64F3A;
 }
 .first-screen__content .btn:hover .btn__bg, .first-screen__content .btn:focus .btn__bg {
-  border-bottom: 13px solid rgba(229, 79, 58, 0.3);
+  border-bottom: 13px solid #F1897B;
 }
 .first-screen__content .btn:active {
   -webkit-transform: translateY(-5px);
@@ -739,7 +740,8 @@ body {
 .section-info .info__text .btn__bg {
   position: absolute;
   width: 186px;
-  border-bottom: 13px solid rgba(241, 137, 123, 0.3);
+  border-bottom: 13px solid #F1897B;
+  opacity: 0.3;
   top: 11px;
   left: 10px;
 }
@@ -747,7 +749,7 @@ body {
   color: #E64F3A;
 }
 .section-info .info__text .btn:hover .btn__bg, .section-info .info__text .btn:focus .btn__bg {
-  border-bottom: 13px solid rgba(229, 79, 58, 0.3);
+  border-bottom: 13px solid #F1897B;
 }
 .section-info .info__text .btn:active {
   -webkit-transform: translateY(-5px);
@@ -1188,7 +1190,8 @@ body {
 .features__list__item .btn__big__bg {
   position: absolute;
   width: 112px;
-  border-bottom: 13px solid rgba(241, 137, 123, 0.3);
+  border-bottom: 13px solid #F1897B;
+  opacity: 0.3;
   top: 11px;
   left: 10px;
 }
@@ -1199,7 +1202,7 @@ body {
   color: #E64F3A;
 }
 .features__list__item .btn:hover .btn__big .btn__big__bg, .features__list__item .btn:focus .btn__big .btn__big__bg {
-  border-bottom: 13px solid rgba(229, 79, 58, 0.3);
+  border-bottom: 13px solid #F1897B;
 }
 .features__list__item .btn:hover:active, .features__list__item .btn:focus:active {
   -webkit-transform: translateY(-5px);
@@ -1495,6 +1498,7 @@ body {
   border-bottom: 1px solid rgba(38, 42, 63, 0.1);
   width: 470px;
   padding-bottom: 12px;
+  color: rgba(38, 42, 63, 0.7);
 }
 @media (max-width: 992px) {
   .contact__form .label input {
@@ -1592,7 +1596,8 @@ body {
 .contact__form .btn__bg {
   position: absolute;
   width: 163px;
-  border-bottom: 13px solid rgba(241, 137, 123, 0.3);
+  border-bottom: 13px solid #F1897B;
+  opacity: 0.3;
   top: 11px;
   left: 10px;
 }
@@ -1600,7 +1605,7 @@ body {
   color: #E64F3A;
 }
 .contact__form .btn:hover .btn__bg, .contact__form .btn:focus .btn__bg {
-  border-bottom: 13px solid rgba(229, 79, 58, 0.3);
+  border-bottom: 13px solid #F1897B;
 }
 .contact__form .btn:active {
   -webkit-transform: translateY(-5px);

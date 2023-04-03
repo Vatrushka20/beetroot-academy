@@ -37,7 +37,8 @@
   &__bg {
     position: absolute;
     width: $width;
-    border-bottom: 13px solid rgba(241, 137, 123, .3);
+    border-bottom: 13px solid $red;
+    opacity: .3;
     top: 11px;
     left: 10px;
   }
@@ -47,7 +48,7 @@
     color: $red-dark;
 
     .btn__bg {
-      border-bottom: 13px solid rgba(229, 79, 58, .3);
+      border-bottom: 13px solid $red;
     }
   }
 

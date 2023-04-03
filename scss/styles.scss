@@ -742,7 +742,8 @@ body {
           &__bg {
             position: absolute;
             width: 112px;
-            border-bottom: 13px solid rgba(241, 137, 123, .3);
+            border-bottom: 13px solid $red;
+            opacity: .3;
             top: 11px;
             left: 10px;
           }
@@ -756,7 +757,7 @@ body {
             color: $red-dark;
 
             .btn__big__bg {
-              border-bottom: 13px solid rgba(229, 79, 58, .3);
+              border-bottom: 13px solid $red;
             }
           }
 
@@ -981,6 +982,8 @@ body {
         border-bottom: 1px solid rgba(38, 42, 63, .1);
         width: 470px;
         padding-bottom: 12px;
+        color: rgba(38, 42, 63, .7);
+
         @include cwd(992px) {
           width: 400px;
         }
