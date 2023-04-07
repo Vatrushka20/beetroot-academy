@@ -69,8 +69,9 @@ alert(`Your perimeter of the square is ${squarePerimeter}!`);
 
 const userRadius = prompt('Please, enter your radius of circle');
 const PI = 3.14;
-const radiusOfCircle = PI * (Number(userRadius) * Number(userRadius));
+const radiusOfCircle = PI * (Number(userRadius) * Number(userRadius)); // ** - дві зірочки піднесення до степеня
 alert(`Your radius of circle is ${radiusOfCircle}!`);
+
 
 
 const userDistance = prompt("Please, enter the distance between the cities (km)");
