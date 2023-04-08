@@ -54,8 +54,8 @@ alert(`Hi, ${userName}! Have fun!`);
 
 const thisYear = 2023;
 const birthYear = prompt("Please, enter your birth year");
-const userAge = 2023 - Number(birthYear);
-alert(`Your age is ${userAge}!`);
+const userYear = thisYear - Number(birthYear);
+alert(`Your age is ${userYear}!`);
 
 
 const userLength = prompt("Please, enter the length of the side of the square");
@@ -68,9 +68,10 @@ alert(`Your perimeter of the square is ${squarePerimeter}!`);
 
 
 const userRadius = prompt('Please, enter your radius of circle');
-const PI = 3.14;
-const radiusOfCircle = PI * (Number(userRadius) * Number(userRadius)); // ** - дві зірочки піднесення до степеня
-alert(`Your radius of circle is ${radiusOfCircle}!`);
+// const PI = 3.14;
+const circle = Math.PI * Number(userRadius) ** 2;
+// const radiusOfCircle = PI * (Number(userRadius) * Number(userRadius)); // ** - дві зірочки піднесення до степеня
+alert(`Your radius of circle is ${circle.toFixed(0)}!`);
 
 
 
