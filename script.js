@@ -1,7 +1,7 @@
-// MIN HOMEWORK
-
-// 1
-
+// // MIN HOMEWORK
+//
+// // 1
+//
 const age = prompt('Please, enter your age?');
 let result;
 if (age >= 0 && age <= 11) {
@@ -17,11 +17,11 @@ if (age >= 0 && age <= 11) {
 }
 
 alert(result);
-
-
-
-// 2
-
+//
+//
+//
+// // 2
+//
 const userSymbol = prompt("Please, enter a number between 0 and 9");
 let resultSymbol;
 //
@@ -61,9 +61,9 @@ switch (userSymbol) {
 }
 
 alert(`Your symbol is " ${resultSymbol} "`);
-//
-// //SHORT FORM IF ELSE
-//
+// //
+// // //SHORT FORM IF ELSE
+// //
 const symbol = prompt("Please, enter a number between 0 and 9");
 
 symbol === '0'
@@ -88,11 +88,11 @@ symbol === '0'
                                         ? resultSymbol = "("
                                         : resultSymbol = "You entered incorrect symbol"
 alert(`Your symbol is " ${resultSymbol} "`)
+// //
 //
-
-
-// 3
 //
+// // 3
+// //
 let start = Number(prompt("Введіть початкове число"));
 let end = Number(prompt("Введіть кінцеве число"));
 let sum = 0;
@@ -100,10 +100,10 @@ for (let i = start; i <= end; i++) {
     sum += i;
 }
 alert(`Сума чисел від ${start} до ${end} дорівнює ${sum}`)
+// //
 //
-
-// 4
-//
+// // 4
+// //
 let firstNum = Number(prompt('Введіть перше число'));
 let secondNum = Number(prompt('Введіть друге число'));
 let minNum = Math.min(firstNum, secondNum);
@@ -114,28 +114,28 @@ for (let i = 2; i <= minNum; i++) {
     }
 }
 alert(`Найбільший спільний дільник числа ${firstNum} та ${secondNum} є - ${gcd}.`)
+// //
 //
-
-
-// 5
 //
+// // 5
+// //
 let num = Number(prompt("Введіть позитивне число:"));
 for (let i = 1; i <= num; i++) {
     if (num % i === 0) {
        alert(`Дільник введенного вами числа ${num} є ${i}`)
     }
 }
-// цикл for використовую для переходу від 1 до числа введенного користувачем
-// оператор % використовую щоб переконатися що 'num' точно ділиться на число 'i'
-// у кожній ітерації перевіряється умова if чи ділиться 'num' на 'i'
-// якщо так то те число 'i' відображається.
+// // цикл for використовую для переходу від 1 до числа введенного користувачем
+// // оператор % використовую щоб переконатися що 'num' точно ділиться на число 'i'
+// // у кожній ітерації перевіряється умова if чи ділиться 'num' на 'i'
+// // якщо так то те число 'i' відображається.
+// //
 //
-
-
-// NORMA HOMEWORK
-
-// 1
 //
+// // NORMA HOMEWORK
+//
+// // 1
+// //
 let numPalindrom = (prompt("Введіть пʼятизначне число (приклад: 55555)"));
 if (numPalindrom.length === 5 && numPalindrom[0] === numPalindrom[4]
     && numPalindrom[1] === numPalindrom[3]) {
@@ -143,11 +143,11 @@ if (numPalindrom.length === 5 && numPalindrom[0] === numPalindrom[4]
 } else {
     alert(`Число ${numPalindrom} не є паліндромом`)
 }
-/* умова яка послідновно перевіряє цифру за цифрою, конкретно тут 1 цифру з 5 цифрою,
- та 2 цифру з 4 цифрою, а 3 є спільною */
-
-// 2
+// /* умова яка послідновно перевіряє цифру за цифрою, конкретно тут 1 цифру з 5 цифрою,
+//  та 2 цифру з 4 цифрою, а 3 є спільною */
 //
+// // 2
+// //
 let amount = Number(prompt("Please, enter your amount"));
 let resultAmount;
 if (amount >= 200 && amount <= 300) {
@@ -174,7 +174,7 @@ let oddCount = 0;
 // Запитуємо 10 чисел через цикл
 for (let index = 1; index <= 10; index++) {
     let numCount = Number(prompt(`Введіть число № ${index}`));
-    if (isNaN(numCount)) {
+    if (isNaN(numCount) || !numCount ) {
         alert(`Введіть число`);
         index--; // зменшуємо лічильник щоб ввів ще раз
         continue;
