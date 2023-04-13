@@ -106,9 +106,9 @@ alert(`Сума чисел від ${start} до ${end} дорівнює ${sum}`)
 //
 let firstNum = Number(prompt('Введіть перше число'));
 let secondNum = Number(prompt('Введіть друге число'));
-let min = Math.min(firstNum, secondNum);
+let minNum = Math.min(firstNum, secondNum);
 let gcd = 1;
-for (let i = 2; i <= min; i++) {
+for (let i = 2; i <= minNum; i++) {
     if (firstNum % i === 0 && secondNum % i === 0) {
         gcd = i;
     }
@@ -149,18 +149,18 @@ if (numPalindrom.length === 5 && numPalindrom[0] === numPalindrom[4]
 // 2
 //
 let amount = Number(prompt("Please, enter your amount"));
-let result;
+let resultAmount;
 if (amount >= 200 && amount <= 300) {
-    result = amount - (amount * 0.03);
+    resultAmount = amount - (amount * 0.03);
 } else if (amount > 300 && amount <= 500) {
-    result = amount - (amount * 0.05);
+    resultAmount = amount - (amount * 0.05);
 } else if (amount > 500) {
-    result = amount - (amount * 0.07);
+    resultAmount = amount - (amount * 0.07);
 } else {
-    result = "incorrect!"
+    resultAmount = "incorrect!"
 }
 
-alert(`Your amount with a discount is ${result}!!!`)
+alert(`Your amount with a discount is ${resultAmount}!!!`)
 
 
 // 3
@@ -246,11 +246,11 @@ while (true) {
 
 // 2
 //
-let result;
+let result1;
 for (let i = 2; i <= 10; i++) {
     for (let j = 1; j <= 10; j++) {
-        result = i * j;
-        document.write(" " + result + " ")
+        result1 = i * j;
+        document.write(" " + result1 + " ")
     }
     document.write('<br>')
 }
