@@ -1,432 +1,326 @@
-// створення об'єкта
+// // // // // // // CLASSWORK // // // // // // // //
+// не сильно застосовується в практиці
+// const obj = Object.create({}, {
+//     name: {
+//         value: "Nastya"
+//     },
+// });
+// console.log(obj)
 
-// let userInfo = new Object(); // синтаксис - конструктор обʼєкта
 
-let userInfo2 = {}; // синтаксис - літерал обʼєкта. Частіше використвують
-
-// Властивості обʼєкта. Ключ та значення
-// name, age - це ключі
-// Nastya, 26 - це значення
-let infoUser3 = {
-    name: 'Nastya',
-    age: 26, /* остання висяча кома, може бути, легше потім міняти місцями
-     властивості без помилок, що забув кому */
-    'like a cat': true, /* можемо ключам давати назву з декількох слів, але огортати в кавички*/
-
+// деструктуризація як Object.assign
+//     ...rest оператор,
+const person = {
+    name: "Nas",
+    age: 26,
+    'love a cat': true,
 };
 
-console.log(infoUser3);
-console.log(infoUser3.name);
-console.log(infoUser3.age);
-console.log(infoUser3['like a cat']); /* коли ключ в кавичках, щоб його викликати використовуємо цей спосіб*/
 
-
-// -----------------------------------------------------------------------------------
-// Обчислюване або передаване ім'я
-
-//Обчислюване
-
-let firstPart = "like";
-let userInfo = {
-    name: 'Nastya',
-    age: 26,
-    [`${firstPart} a cat`]: true,
-};
-
-console.log(userInfo['like a cat']);
-
-
-// Передане імʼя
-let firstPart3 = "like";
-let userInfo3 = {
-    name: 'Nastya',
-    age: 26,
-    [firstPart3]: true,
-};
-console.log(userInfo3[firstPart3]);
-
-
-// Перевага квадратних дужок при зверненні до ключа
-let key = 'name';
-console.log(userInfo3[key]);
-
-// через крапку неможливо зврнутися
-let key1 = 'name';
-console.log(userInfo3.key1); /* undefined, такого імені в обʼєкті не існує */
-
-// Зарезервовані слова можна використовувати в обʼєктах: let, for, if та інші
-
-
-// -----------------------------------------------------------------------------------
-// Тип даних Symbol
-// Створюємо символ id з описом (ім'ям) "id"
-let id = Symbol('id');
-let info = {
-    name: 'Nastya',
-    age: 26,
-    [id]: 'Something some',
-};
-
-console.log(info[id]);
-/* Основне застосування символів:
- 1. "Приховані" властивості об'єктів
-Символьна властивість не з'явиться в for..in
-2. Використання системних символів
-Symbol.iterator, Symbol.toPrimitive тощо.
-*/
-
-
-// -----------------------------------------------------------------------------------
-// Вкладеність обʼєктів
-
-let infoAboutUser = {
-    name: "Nastya",
-    age: 26,
-    address: {
-        city: 'Odesa',
-        street: 'Some',
-    }
-}
-console.log(infoAboutUser);
-console.log(infoAboutUser.address);
-console.log(infoAboutUser.address.city);
-
-
-//Властивості зі змінної
-// let getFunction = (name, age) => {
-//     return {
-//         name: name,
-//         age: age,
-//         //інші властивості
-//     };
-// }
-
-// трохи спрощений запис того що вище
-let getFunction = (name, age) => {
-    return {
-        name,
-        age,
-        'like a cat': true,
-        //інші властивості
-    };
-}
-let user = getFunction('Nastya', 26);
-console.log(user);
-console.log(user.name);
-console.log(user['like a cat']);
-
-
-// -----------------------------------------------------------------------------------
-// Зміни обʼєктів, їх властивостей
-
-// 1. додавання властивостей
-let infoAboutMe = {
-    name: 'Nastya',
-}
-console.log(infoAboutMe);
-
-infoAboutMe.age = 26;
-console.log(infoAboutMe);
-
-infoAboutMe['like a cat'] = true;
-console.log(infoAboutMe);
-
-infoAboutMe.address = {
+const address = {
     city: 'Odesa',
-    street: 'some',
+    country: 'Ukraine',
+}
+
+
+const person2 = {...person, ...address};
+const {name, age, ...anyName} = person2;
+
+console.log(person2);
+console.log(anyName);
+
+// anyName це константа варіація, це рест оператор, і він витягує все що є в обʼєкті.
+
+
+for (const key in person2) {
+    console.log(key, person2[key])
+}
+
+// перетворюємо обджект в массив
+console.log(Object.values(person2));
+console.log(Object.keys(person2));
+console.log(Object.entries(person2));
+
+
+// // ////// //////
+
+
+let myCat = {
+    name: 'Lu',
+    age: '1 year',
+    'breed of cat': 'without breed ',
+    color: 'multicolored',
 };
-console.log(infoAboutMe)
 
-// 2. видалення властивостей - через delete
-let infoAboutUser1 = {
-    name: "Nastya",
-    age: 26,
-    address: 'Odesa',
-}
-console.log(infoAboutUser1);
-
-delete infoAboutUser1.name;
-console.log(infoAboutUser1);
-
-delete infoAboutUser1.address;
-console.log(infoAboutUser1);
-
-delete infoAboutUser1.age;
-console.log(infoAboutUser1);
-
-// 3. зміна властивостей
-let some = {
-    name: 'you',
-    age: 3,
-}
-console.log(some)
-
-some.name = 'me';
-console.log(some)
-
-// 4. зміна властивостей навіть у const
-const someYou = {
-    name: 'you',
-    age: 3,
-}
-console.log(someYou)
-
-someYou.name = 'me';
-console.log(someYou)
-
-/* 4.копіювання обʼєктів у іншу змінну
-сам обʼєкт не копіюється / не дублюється, тільки посилання на нього
- */
-
-let someInfo = {
-    name: 'Nastya',
-    age: 26,
-}
-console.log(someInfo);
-
-let someInfoUser = someInfo;
-console.log(someInfoUser);
-
-someInfoUser.name = 'Olya';
-console.log(someInfoUser);
-
-
-// -----------------------------------------------------------------------------------
-/* Дублювання обʼєктів - (Object.assign)
-синтаксис - Object.assign(куди(обʼєкт), що(властивість №1), що(власт №2),....);
- */
-let userUser = {
-    name: 'some',
-    age: 26,
-}
-
-let justUser = Object.assign({}, userUser);
-
-justUser.age = 20;
-
-console.log(userUser);
-console.log(justUser);
-
-
-// через Object.assign можемо додавати нові властивості
-let user2 = {
-    name: 'some',
-    age: 26,
-}
-Object.assign(user2, {['like a cat']: true, city: 'Odesa'});
-console.log(user2);
-
-
-// -----------------------------------------------------------------------------------
-// Перевірка існування властивості
-let userInfo4 = {
-    name: "Вася",
-    // age: 30,
-}
-console.log(userInfo4.age);
-
-if (userInfo4.age) { // true или false
-    console.log(userInfo4.age);
-}
-
-//--------------------
-// Опціональний ланцюжок
-let userInfo5 = {
-    name: "Вася",
-    age: 30,
-    //address: {
-    //	city: "Uzhhorod",
-    //	street: "Freedom",
-    //}
-}
-//console.log(userInfo5.address.street);
-console.log(userInfo5?.address?.street);
-
-//--------------------
-// Оператор 'in'
-
-let user10 = {name: "Іван", age: 30};
-
-console.log("age" in user10); // true, user.age існує
-console.log("blabla" in user10);
-
-
-let userInfo6 = {
-    name: 'me',
-    age: 26,
-    address: {
-        city: 'Odesa',
-        street: 'some',
-    }
-}
-if ('name' in userInfo6) {
-    console.log(userInfo6.name);
-}
-
-//У більшості випадків спрацює порівняння з undefined.
-//або опціональний ланцюжок ?.
-//Але є особливий випадок, коли властивість існує, але містить значення undefined.
-//У цьому випадку необхідно використовувати "in".
-
-let userInfo7 = {
-    name: undefined,
-    // ...наст власт
-}
-if (userInfo7.name) { // false
-    console.log(userInfo.name);
-}
-if ("name" in userInfo7) { //true
-    console.log(userInfo7.name);
-}
-
-
-// -----------------------------------------------------------------------------------
-// Цикл «for…in»
-/*
-// Для перебору всіх властивостей об'єкта використовується цикл for..in.
-// Цей цикл відрізняється від вивченого раніше циклу for(;;;).
-
-for (let key in object) {
-	// тіло циклу виконується для кожної властивості об'єкта
-}
-*/
-
-//-----------
-
-let userInfo10 = {
-    name: "Вася",
-    age: 30,
-    address: {
-        city: "Uzhhorod",
-        street: "Freedom",
-    }
-}
-
-for (let key in userInfo10) {
-    // ключі
-    console.log(key); // name, age, address
-    // значення ключів
-    console.log(userInfo10[key]); // Вася, 30, Object {}
-}
-
-for (let key in userInfo10.address) {
-    // ключі
-    console.log(key); // city, street
-    // значення ключів
-    console.log(userInfo10.address[key]);
-}
-
-
-// -----------------------------------------------------------------------------------
-// Методи обʼєктів
-
-let smth = {
-    name: "Вася",
-    age: 30,
-    address: {
-        city: "Uzhhorod",
-        street: "Freedom",
-    },
-    showInfo: function () {
-        console.log(`${smth.name}, ${smth.age} років. Адреса: м. ${smth.address.city}, вулиця ${smth.address.street}`);
-    }
-    /* скорочений варіант
-    showInfo() {
-        console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
-    }
-     */
-}
-smth.showInfo()
-
-// ---------------------------------------------------------------------------------
-let smth1 = {
-    name: "Вася",
-    age: 30,
-    address: {
-        city: "Uzhhorod",
-        street: "Freedom",
-    },
-    showInfo() {
-        // console.log(`${smth1.name}, ${smth1.age} лет. Адрес: г.${smth1.address.city}, ул.${smth1.address.street}`);
-        console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
-    }
-}
-smth.showInfo()
-
-
-/* let userInfo = {
-    name: "Вася",
-    age: 30,
-    address: {
-        city: "Uzhhorod",
-        street: "Freedom",
-    },
-    showInfo() {
-        //function show() {
-        //	console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
-        //}
-
-     // У стрілочної функції немає свого "this" використовуються
-        // значення із зовнішнього методу userInfo.showInfo()
-        let show = () => console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
-        show();
-    }
-}
-userInfo.showInfo();
-*/
-
-
-// Функція-конструктор
-
-/*
-Звичайний синтаксис створення об'єкта{... } дозволяє створити
-тільки один об'єкт. Але найчастіше нам потрібно створити безліч
-однотипних об'єктів, таких як користувачі, елементи меню тощо.
-Це можна зробити за допомогою функції - конструктора й оператора "new".
-*/
-/*
-Функції - конструктори є звичайними функціями.
-Але є два правила:
-1. ім'я функції - конструктора має починатися з великої літери.
-2. Функція - конструктор повинна викликатися за допомогою
-	оператора "new".
-*/
-/*
-function UserInfo(name) {
-
-	// this = {}; Створюється порожній об'єкт (неявно)
-
-	this.name = name;
-	this.age = 30;
-
-	// return this; Повертається об'єкт (неявно)
-}
-
-console.log(new UserInfo('Вася'));
-console.log(new UserInfo('Лєна'));
-*/
-
-
-////////////////////////////////
-
-function isEmpty(obj) {
-    for (let key in obj) {
-        return false;
-    }
-    return true;
-}
-
-console.log(isEmpty());
-
-
-let salaries = {
-    John: 100,
-    Ann: 160,
-    Pete: 130
+let whatSheLikes = {
+    food: 'dry food, sometimes - wet food',
+    'what she likes': "games: ball, thread",
+    'what she doesnt like': 'bathe',
 };
-let sum = 0;
-for (let key in salaries) {
-    sum += salaries[key];
+
+
+let cat = {
+    showInfoName() {
+        console.log(`Cat name is ${this.name}.`)
+    },
+    showInfoFood() {
+        console.log(`She likes ${this.food}`)
+    },
+    showInfoColorCat() {
+        console.log(`She is ${this.color}`)
+    }
 }
 
-console.log(sum)
+let fullCat = {...myCat, ...whatSheLikes, ...cat};
+
+console.log(myCat)
+console.log(whatSheLikes);
+fullCat.showInfoName()
+fullCat.showInfoFood()
+fullCat.showInfoColorCat()
+
+// fullCat.showInfo.call(cat)
+
+
+/*----------------------------------HOMEWORK----------------------------------*/
+
+
+// MIN HOMEWORK
+/* 1. Створи об'єкт, що описує автомобіль (виробник, модель,
+рік випуску, середня швидкість, обсяг паливного бака,
+середня витрата палива на 100 км, водії),
+і наступні методи для роботи з цим об'єктом:
+1. Метод, який виводить на екран інформацію про автомобіль.
+2. Додавання ім’я водія у список.
+3. Перевірка водія на наявність його ім’я у списку.
+4. Підрахунок необхідного часу та кількості палива для подолання переданої відстані
+з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві
+необхідно робити перерву на 1 годину.
+ */
+//
+let car = {
+    brand: 'Mercedes-Benz',
+    model: 'C-Class',
+    'year of release': 2019,
+    'average speed': 160,
+    'fuel tank': 70,
+    'average fuel consumption': 8,
+    drivers: {
+        first: 'Ivan',
+        second: 'David',
+    },
+};
+
+let carInfo = {
+    showInfoAboutCar() {
+        console.log(`
+Its ${this.brand}, model ${this.model}.
+Release ${this['year of release']} year.
+Average speed is ${this['average speed']} km/h.
+Volume of the fuel tank is ${this['fuel tank']} liters.
+The average fuel consumption per 100 km is ${this['average fuel consumption']} liters.
+The first driver is ${this.drivers.first} and the second is ${this.drivers.second}.`)
+    },
+
+    newDrivers() {
+        return this.drivers.traineeTwo = 'Ivan';
+        console.log(this.newDrivers())
+    },
+
+    checkDrivers(objectName, keyName) {
+        let keyExist = Object.keys(objectName).some(key => key === keyName);
+        return keyExist;
+        console.log(keyExist)
+    },
+
+    findFuelConsumption(distance, car) {
+        return (distance * car['average fuel consumption']) / 100;
+    },
+
+    findTimeOfTrip(distance, car) {
+        let timeWithoutRest = Math.round(distance / car["average speed"]);
+        let countOfResting = this.findCountOfResting(timeWithoutRest);
+
+        return timeWithoutRest + countOfResting;
+    },
+
+    findCountOfResting(timeWithoutRest) {
+        let timeBetweenResting = 4;
+        return Math.floor(timeWithoutRest / timeBetweenResting );
+    }
+
+};
+
+car.drivers.traineeOne = 'Vlad';
+
+
+let distance = Number(prompt(`Please, enter your distance in km`));
+
+fullInfoAboutCar = {...car, ...carInfo};
+
+
+fullInfoAboutCar.showInfoAboutCar()
+fullInfoAboutCar.newDrivers()
+console.log(carInfo.checkDrivers(fullInfoAboutCar, 'drivers'));
+
+alert(`You need ${fullInfoAboutCar.findFuelConsumption(distance, car)} liters of petrol and ${fullInfoAboutCar.findTimeOfTrip(distance, car)} hours for your journey.`)
+
+
+// NORMA HOMEWORK
+/* 1. Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції
+для роботи з цим об'єктом:
+1. Для виведення часу на екран.
+2. Зміни часу на передану кількість секунд.
+3. Зміни часу на передану кількість хвилин.
+4. Зміни часу на передану кількість годин.
+Враховуйте, що в останніх 3-х функціях, при зміні однієї частини часу,
+може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд,
+то повинно вийти «21:00:15», а не «20:59:75». Також потрібно передбачити
+можливість того що користувач може передати 150 секунд, або 75 хвилин.
+ */
+//  1 variant
+let time = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+};
+
+let timeInfo = {
+    showTime() {
+        let hoursString = this.hours < 10 ? '0' + this.hours : this.hours;
+        let minutesString = this.minutes < 10 ? '0' + this.minutes : this.minutes;
+        let secondsString = this.seconds < 10 ? '0' + this.seconds : this.seconds;
+
+        console.log(`Time - ${hoursString}:${minutesString}:${secondsString}`);
+    },
+
+    showTimeWithChangesSeconds(seconds) {
+        let secondsChanges = this.hours * 3600 + this.minutes * 60 + this.seconds + seconds;
+
+        this.hours = Math.floor(secondsChanges / 3600) % 24;
+        this.minutes = Math.floor(secondsChanges / 60) % 60;
+        this.seconds = secondsChanges % 60;
+
+        this.showTime()
+    },
+
+    showTimeWithChangesMinutes(minutes) {
+        this.showTimeWithChangesSeconds(minutes * 60);
+    },
+
+    showTimeWithChangesHours(hours) {
+        this.showTimeWithChangesSeconds(hours * 3600);
+    },
+}
+
+time.hours = 20;
+time.minutes = 59;
+time.seconds = 45;
+
+
+fullTime = {...time, ...timeInfo};
+
+fullTime.showTime();
+fullTime.showTimeWithChangesSeconds(3000);
+fullTime.showTimeWithChangesMinutes(30);
+fullTime.showTimeWithChangesHours(2);
+
+
+
+// 2 variant
+const day = new Date();
+console.log(day)
+
+
+let changeHours = 100;
+let changeMinutes = 100;
+let changeSeconds = 100;
+
+function getTimeWithChangedSeconds() {
+    let time = new Date(Date.now() + (changeSeconds * 1000));
+    console.log(time)
+}
+
+getTimeWithChangedSeconds()
+
+function getTimeWithChangedMinutes() {
+    let time = new Date(Date.now() + (changeMinutes * 1000) * 60);
+    console.log(time)
+}
+
+getTimeWithChangedMinutes()
+
+function getTimeWithChangedHours() {
+    let time = new Date(Date.now() + (changeHours * 1000) * 3600);
+    console.log(time)
+}
+
+getTimeWithChangedHours()
+
+
+
+// 3 variant
+let clock = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+
+    displayTime() {
+        let hours = this.hours.toString().padStart(2, '0');
+        let minutes = this.minutes.toString().padStart(2, '0');
+        let seconds = this.seconds.toString().padStart(2, '0');
+        console.log(`${hours}:${minutes}:${seconds}`);
+    },
+
+    addSeconds(seconds) {
+        let newTime = new Date();
+        newTime.setHours(this.hours, this.minutes, this.seconds + seconds);
+        this.hours = newTime.getHours();
+        this.minutes = newTime.getMinutes();
+        this.seconds = newTime.getSeconds();
+    },
+
+    addMinutes(minutes) {
+        let newTime = new Date();
+        newTime.setHours(this.hours, this.minutes + minutes, this.seconds);
+        this.hours = newTime.getHours();
+        this.minutes = newTime.getMinutes();
+        this.seconds = newTime.getSeconds();
+    },
+
+    addHours(hours) {
+        let newTime = new Date();
+        newTime.setHours(this.hours + hours, this.minutes, this.seconds);
+        this.hours = newTime.getHours();
+        this.minutes = newTime.getMinutes();
+        this.seconds = newTime.getSeconds();
+    },
+};
+
+clock.hours = 20;
+clock.minutes = 59;
+clock.seconds = 20;
+
+
+clock.displayTime();
+
+clock.addSeconds(100);
+clock.displayTime();
+
+clock.addMinutes(100);
+clock.displayTime(100);
+
+clock.addSeconds(100);
+clock.displayTime()
+
+
+// час в цей момент
+// let now = new Date();
+// console.log(now)
+
+//
+// let Feb20_1997 = new Date('1997-02-20');
+// console.log(Feb20_1997)
+//
+// let Apr20_2023 = new Date(2023, 3, 20, 12, 22, 20, 194);
+// console.log(Apr20_2023)
