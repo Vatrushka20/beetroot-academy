@@ -101,10 +101,10 @@ fullCat.showInfoColorCat()
 let car = {
     brand: 'Mercedes-Benz',
     model: 'C-Class',
-    'year of release': 2019,
-    'average speed': 160,
-    'fuel tank': 70,
-    'average fuel consumption': 8,
+    yearOfRelease: 2019,
+    averageSpeed: 160,
+    fuelTank: 70,
+    averageFuelConsumption: 8,
     drivers: {
         first: 'Ivan',
         second: 'David',
@@ -115,10 +115,10 @@ let carInfo = {
     showInfoAboutCar() {
         console.log(`
 Its ${this.brand}, model ${this.model}.
-Release ${this['year of release']} year.
-Average speed is ${this['average speed']} km/h.
-Volume of the fuel tank is ${this['fuel tank']} liters.
-The average fuel consumption per 100 km is ${this['average fuel consumption']} liters.
+Release ${this['yearOfRelease']} year.
+Average speed is ${this['averageSpeed']} km/h.
+Volume of the fuel tank is ${this['fuelTank']} liters.
+The average fuel consumption per 100 km is ${this['averageFuelConsumption']} liters.
 The first driver is ${this.drivers.first} and the second is ${this.drivers.second}.`)
     },
 
@@ -127,18 +127,17 @@ The first driver is ${this.drivers.first} and the second is ${this.drivers.secon
         console.log(this.newDrivers())
     },
 
-    checkDrivers(objectName, keyName) {
-        let keyExist = Object.keys(objectName).some(key => key === keyName);
-        return keyExist;
-        console.log(keyExist)
+    checkDrivers() {
+        let keyExist = Object.values(this.drivers.first);
+        console.log('first' in this.drivers)
     },
 
     findFuelConsumption(distance, car) {
-        return (distance * car['average fuel consumption']) / 100;
+        return (distance * car['averageFuelConsumption']) / 100;
     },
 
     findTimeOfTrip(distance, car) {
-        let timeWithoutRest = Math.round(distance / car["average speed"]);
+        let timeWithoutRest = Math.round(distance / car["averageSpeed"]);
         let countOfResting = this.findCountOfResting(timeWithoutRest);
 
         return timeWithoutRest + countOfResting;
@@ -161,7 +160,7 @@ fullInfoAboutCar = {...car, ...carInfo};
 
 fullInfoAboutCar.showInfoAboutCar()
 fullInfoAboutCar.newDrivers()
-console.log(carInfo.checkDrivers(fullInfoAboutCar, 'drivers'));
+fullInfoAboutCar.checkDrivers()
 
 alert(`You need ${fullInfoAboutCar.findFuelConsumption(distance, car)} liters of petrol and ${fullInfoAboutCar.findTimeOfTrip(distance, car)} hours for your journey.`)
 
