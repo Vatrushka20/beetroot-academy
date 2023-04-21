@@ -430,3 +430,64 @@ for (let key in salaries) {
 }
 
 console.log(sum)
+
+
+//---------------Data Object------------
+
+
+// час в цей момент
+let now = new Date();
+
+let utc = now.toUTCString();
+let simple = now.toDateString();
+let iso = now.toISOString();
+
+//
+// console.log(utc);
+// console.log(simple);
+// console.log(iso);
+
+
+// console.log(now.toLocaleString('eu'));
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getDay());
+// console.log(now.getHours());
+// console.log(now.getMinutes());
+// console.log(now.getSeconds());
+
+
+//
+// let Feb20_1997 = new Date('1997-02-20');
+// console.log(Feb20_1997)
+//
+// let Apr20_2023 = new Date(2023, 3, 20, 12, 22, 20, 194);
+// console.log(Apr20_2023)
+
+
+// function getUserDate(){
+//     let newTime = new Date().toDateString()
+//
+//
+//     console.log(`${newTime}`)
+// }
+//
+// getUserDate()
+const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+const days = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'Пʼятниця', 'Субота'];
+
+const correctNumber = (number) => number < 10 ? '0' + number : number;
+
+function getUserDate(time) {
+    const date = correctNumber(time.getDate());
+    const month = months[time.getMonth()];
+    const year = time.getFullYear();
+    const hours = correctNumber(time.getHours());
+    const minutes = correctNumber(time.getMinutes());
+    const day = days[time.getDay()];
+
+    return `${date} ${month} ${year} ${hours}:${minutes} (${day})`
+}
+
+console.log(getUserDate(new Date()));

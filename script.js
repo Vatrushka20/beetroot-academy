@@ -312,14 +312,3 @@ clock.displayTime(100);
 clock.addSeconds(100);
 clock.displayTime()
 
-
-// час в цей момент
-// let now = new Date();
-// console.log(now)
-
-//
-// let Feb20_1997 = new Date('1997-02-20');
-// console.log(Feb20_1997)
-//
-// let Apr20_2023 = new Date(2023, 3, 20, 12, 22, 20, 194);
-// console.log(Apr20_2023)
