@@ -191,6 +191,22 @@ let shoppingList = [
         sum: 72,
     },
 ]
+//1
+let showPurchaseYes = (array) => {
+    array.forEach(function ({productName, purchase}) {
+        if (purchase === 'no') {
+            console.log(`Некуплений товар - ${productName}`)
+        }
+    });
+    array.forEach(function ({productName, purchase}) {
+        if (purchase === 'yes') {
+            console.log(`Куплений товар - ${productName}`)
+        }
+    });
+}
+showPurchaseYes(shoppingList);
+
+// 1 інший спосіб
 let groupByPurchase = (shoppingList) => {
     let group = shoppingList.reduce((group, product) => {
         let {purchase} = product;
@@ -204,24 +220,6 @@ let groupByPurchase = (shoppingList) => {
 groupByPurchase(shoppingList);
 
 
-// let showPurchaseNo = (shoppingList) => {
-//     let res;
-//     shoppingList.forEach(({productName, purchase}) => {
-//         if (purchase === 'no') {
-//             console.log(productName)
-//         }
-//     });
-// }
-// showPurchaseNo(shoppingList);
-// let showPurchaseYes = (shoppingList) => {
-//     shoppingList.forEach(({productName, purchase}) => {
-//         if (purchase === 'yes') {
-//            console.log(productName)
-//         }
-//     });
-// }
-// showPurchaseYes(shoppingList);
-
 
 //HOMEWORK NORMA
 /* Норма
@@ -232,6 +230,7 @@ groupByPurchase(shoppingList);
 покупці, а не додавати нову. При цьому також повинна змінитися сума,
 наприклад, якщо ціна за одиницю 12, а кількості товарів стало 2, то сума буде 24. */
 // ----------
+
 // 1
 let newShoppingList = [...shoppingList];
 let deleteSomeElement = (array) => array.splice(1, 1);
@@ -275,7 +274,7 @@ console.log(`Сума всіх товарів ${sumOfShoppingList(shoppingList)}
 let sumOfNotBought = (array) => {
     let suma = 0;
     return array.reduce(function (total, value) {
-        if(value.purchase === 'no'){
+        if (value.purchase === 'no') {
             suma = total + value.numberOfProduct * value.priceOfOne;
         }
         return suma;
