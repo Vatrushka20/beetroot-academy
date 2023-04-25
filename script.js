@@ -149,76 +149,66 @@ console.log(res)
 
 let shoppingList = [
     {
-        productName: 'tomato',
-        numberOfProduct: 5,
-        purchase: 'no',
-        priceOfOne: 10,
-        sum: 50,
+        productName: 'tomato', numberOfProduct: 5, purchase: false, priceOfOne: 10, sum: 50,
     },
     {
-        productName: 'orange',
-        numberOfProduct: 3,
-        purchase: 'yes',
-        priceOfOne: 20,
-        sum: 60,
+        productName: 'orange', numberOfProduct: 3, purchase: true, priceOfOne: 20, sum: 60,
     },
     {
-        productName: 'potato',
-        numberOfProduct: 20,
-        purchase: 'yes',
-        priceOfOne: 2,
-        sum: 40,
+        productName: 'potato', numberOfProduct: 20, purchase: true, priceOfOne: 2, sum: 40,
     },
     {
-        productName: 'banana',
-        numberOfProduct: 6,
-        purchase: 'no',
-        priceOfOne: 13,
-        sum: 78,
+        productName: 'banana', numberOfProduct: 6, purchase: false, priceOfOne: 13, sum: 78,
     },
     {
-        productName: 'apple',
-        numberOfProduct: 7,
-        purchase: 'no',
-        priceOfOne: 4,
-        sum: 28,
+        productName: 'apple', numberOfProduct: 7, purchase: false, priceOfOne: 4, sum: 28,
     },
     {
-        productName: 'cucumber',
-        numberOfProduct: 8,
-        purchase: 'yes',
-        priceOfOne: 9,
-        sum: 72,
+        productName: 'cucumber', numberOfProduct: 8, purchase: true, priceOfOne: 9, sum: 72,
     },
 ]
-//1
+
+//1 завдання
 let showPurchaseYes = (array) => {
     array.forEach(function ({productName, purchase}) {
-        if (purchase === 'no') {
+        if (purchase === false) {
             console.log(`Некуплений товар - ${productName}`)
         }
     });
     array.forEach(function ({productName, purchase}) {
-        if (purchase === 'yes') {
+        if (purchase === true) {
             console.log(`Куплений товар - ${productName}`)
         }
     });
 }
 showPurchaseYes(shoppingList);
 
-// 1 інший спосіб
-let groupByPurchase = (shoppingList) => {
-    let group = shoppingList.reduce((group, product) => {
-        let {purchase} = product;
-        group[purchase] = group[purchase] ?? [];
-        group[purchase].push(product);
-        return group;
-    }, {});
-    console.log(group)
-};
+// інший спосіб
+let displayShoppingList = (list) => {
+    list.sort((a, b) => a.purchase - b.purchase);
 
-groupByPurchase(shoppingList);
+    list.forEach(item => {
+        let status = item.purchase ? "Куплено" : "Не куплено";
+        console.log(`${item.productName}: ${status}, ${item.numberOfProduct} шт. по ${item.priceOfOne} грн. за шт. = ${item.sum} грн.`);
+    });
+}
+displayShoppingList(shoppingList);
 
+
+// 2 завдання
+
+let purchaseItem = (array, itemName) => {
+    let item = array.find(item => item.productName === itemName);
+
+    if (item) {
+        item.purchase = true;
+        console.log(`Куплено ${itemName}`);
+    } else {
+        console.log(`Помилка. Продукт ${itemName} не знайдено у списку`);
+    }
+}
+purchaseItem(shoppingList, 'tomato');
+console.log(shoppingList) // оновлений список, де куплено томати
 
 
 //HOMEWORK NORMA
@@ -231,30 +221,46 @@ groupByPurchase(shoppingList);
 наприклад, якщо ціна за одиницю 12, а кількості товарів стало 2, то сума буде 24. */
 // ----------
 
-// 1
+// 1 завдання
 let newShoppingList = [...shoppingList];
 let deleteSomeElement = (array) => array.splice(1, 1);
 deleteSomeElement(newShoppingList);
 console.log(newShoppingList);
 
+// інший спосіб
+let removeItem = (array, itemName) => {
+    let newListOfProduct = array.filter(item => item.productName !== itemName);
+    console.log(`Видалено ${itemName}`);
+    return newListOfProduct;
+};
+shoppingList = removeItem(shoppingList, 'potato');
+console.log(shoppingList)
 
-// 2
-let shoppingListTwo = [
-    {
-        productName: 'banana',
-        numberOfProduct: 6,
-    },
-    {
-        productName: 'lemon',
-        numberOfProduct: 3,
-        purchase: 'no',
-        priceOfOne: 8,
-        sum: 24,
-    },
-]
 
-let newList = [...shoppingList, ...shoppingListTwo];
-console.log(newList)
+// 2 завдання
+let addItem = (array, itemName, itemNumberOfProduct, itemPriceOfOne) => {
+    let item = array.find(item => item.productName === itemName);
+
+    if (item) {
+       item.numberOfProduct += itemNumberOfProduct;
+       item.sum += itemNumberOfProduct * itemPriceOfOne;
+       console.log(`Додано ${itemNumberOfProduct} шт ${itemName}`)
+    } else {
+        let newItem = {
+            productName: itemName,
+            numberOfProduct: itemNumberOfProduct,
+            purchase: false,
+            priceOfOne: itemPriceOfOne,
+            sum: itemNumberOfProduct * itemPriceOfOne,
+        };
+        array.push(newItem);
+        console.log(`Додано новий продукт ${itemName}`)
+    }
+    return array;
+}
+
+shoppingList = addItem(shoppingList, 'tomato', 2, 22);
+console.log(shoppingList)
 
 // ---------- MAX HOMEWORK
 
@@ -265,19 +271,59 @@ console.log(newList)
 / від меншого до більшого, в залежності від параметра функції, який вона приймає)
  */
 
-// 1
+// 1 завдання
 let sumOfShoppingList = (array) => array.reduce((total, value) => total + value.numberOfProduct * value.priceOfOne, 0);
 console.log(`Сума всіх товарів ${sumOfShoppingList(shoppingList)} грн.`);
 
 
-// 2
+// 2 завдання
 let sumOfNotBought = (array) => {
     let suma = 0;
     return array.reduce(function (total, value) {
-        if (value.purchase === 'no') {
+        if (value.purchase === false) {
             suma = total + value.numberOfProduct * value.priceOfOne;
         }
         return suma;
     }, 0);
 }
 console.log(`Сума некуплених товарів ${sumOfNotBought(shoppingList)} грн.`)
+
+
+// 3 завдання
+let sortShoppingList = (array) => {
+    console.log(`Сортування продукту в залежності від суми:`)
+    array.sort((first, second) => first.sum - second.sum);   // сортує від меншої до більшої
+    // array.sort((first, second) => second.sum - first.sum); // сортує від більшої до меншої
+
+    array.forEach((value) => {
+        console.log(`Сума ${value.productName} - ${value.sum}`);
+    })
+}
+sortShoppingList(shoppingList)
+
+// інший спосіб
+function sortItemsByPrice(items, ascending = true) {
+    items.sort((a, b) => {
+        if (a.priceOfOne * a.numberOfProduct < b.priceOfOne * b.numberOfProduct) {
+            return ascending ? 1 : -1;
+        } else if (a.priceOfOne * a.numberOfProduct > b.priceOfOne * b.numberOfProduct) {
+            return ascending ? -1 : 1;
+        } else {
+            return 0;
+        }
+    });
+    return items;
+}
+
+// console.log(sortItemsByPrice(shoppingList)); // Виведе список у порядку спадання суми
+console.log(sortItemsByPrice(shoppingList, false)); // Виведе список у порядку зростання суми
+
+
+// ще спосіб
+let sortSum = (array) => {
+    return array.sort((s1, s2) => s1.sum > s2.sum ? 1 : (s1.sum < s2.sum) ? -1 : 0)
+};
+console.log(sortSum(shoppingList))
+
+
+
