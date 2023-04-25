@@ -174,6 +174,40 @@ console.log(elemsByName)
 const elemsByClassName = document.getElementsByClassName('block')
 console.log(elemsByClassName)
 
+// -----
+// closest
+// Піднімається вверх від елемента та перевіряє кожного з батьків.
+// Якщо він відповідає селектору, пошук завершується. Метод повертає або предка,
+// або null, якщо такий елемент не знайдено
 
+const elemClosest = document.querySelector('.nav-item');
+const parentList = elemClosest.closest('.header');
+console.log(parentList)
+// дуже корисний метод, часто використовується для перевірки на існування того чи іншого батька,
+// або для зміни батька конкретного елемента
 
-// --------------------------------------------------------
+// -----
+// matches
+/*
+Нічого не шукає, а перевіряє, чи задовільняє елемент СSS-селектору
+та повертає true або false
+ */
+
+// const elemMatch = document.querySelectorAll('.header');
+// for (let elem of elemMatch) {
+//     if(elem.matches('[class="nav-item_red"]')){
+//         console.log('Красний');
+//     } else if(elem.matches('[class="nav-item_blue"]')){
+//         console.log('Синій')
+//     }
+// }
+
+// -----------
+/*
+Якщо ми отримали обʼєкт тим чи іншим способом, ми можемо застосувати властивості навігації
+про які говорили раніше
+ */
+const text = document.querySelector('.header');
+const list = text.nextElementSibling;
+console.log(list)
+
