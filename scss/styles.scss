@@ -1,2 +1,179 @@
+@import "../scss/normalize.css";
+@import "variables";
+@import "responsive";
+@import "mixins";
 
+html {
+  background-color: $base-white;
+}
 
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.open {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid rgba(179, 212, 252, 1);
+    color: white;
+    background-color: rgba(179, 212, 252, 1);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+//завдання 2 модальне вікно
+
+.modal-window {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  .modal-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    height: max-content;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(217, 233, 254);
+    border-radius: 10px;
+
+    &__header {
+      .general-title {
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 900;
+        font-size: 30px;
+        padding-top: 20px;
+      }
+    }
+
+    &__body {
+      .description {
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      gap: 100px;
+      justify-content: center;
+
+      .btn {
+        border: 2px solid black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: black;
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        &:hover {
+          color: black;
+          background-color: white;
+        }
+        &:active {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+//завдання 3 світлофор
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+
+  &__border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 120px;
+    text-align: center;
+    background-color: black;
+
+    .circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid black;
+      margin-top: 10px;
+    }
+
+    .red {
+      background-color: rgba(250, 0, 0, .2);
+
+      &.on {
+        background-color: rgba(250, 0, 0, 1);
+      }
+    }
+
+    .yellow {
+      background-color: rgba(247, 251, 23, .3);
+
+      &.on {
+        background-color: rgba(247, 251, 23, 1);
+      }
+    }
+
+    .green {
+      background-color: rgba(48, 190, 0, .3);
+
+      &.on {
+        background-color: rgba(48, 190, 0, 1);
+      }
+    }
+  }
+
+  .line-height {
+    height: 300px;
+    width: 10px;
+    background-color: black;
+  }
+
+  .line-width {
+    height: 10px;
+    width: 50px;
+    background-color: black;
+  }
+}
+
+@media screen and(max-width: 1170px) {
+  .wrapper {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}

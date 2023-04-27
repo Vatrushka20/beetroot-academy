@@ -6,9 +6,50 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/styles.css" rel="stylesheet">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lato:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <title>Homework</title>
 </head>
-<body>
+<body class="wrapper">
+<button onclick="openModalWindow()" class="open">Open Window</button>
+
+<div id="modalWindow" class="modal-window">
+    <div class="modal-content">
+        <div class="modal-content__header">
+            <h1 class="general-title">Survey</h1>
+        </div>
+        <div class="modal-content__body">
+            <p class="description">Do you want to learn Front-end development?</p>
+        </div>
+        <div class="modal-content__footer">
+            <a href="https://lms.beetroot.academy/onlineroom/cl6qflpmaigjp0727hcdwm5cf"
+               target="_blank" onclick="closeModalWindow()">
+                <button class="btn btn-yes">Yes</button>
+            </a>
+            <button onclick="closeModalWindow()" class="btn btn-no">No</button>
+        </div>
+    </div>
+</div>
+
+
+<div id="traffic" class="traffic-light">
+    <div class="traffic-light__border">
+        <div id="redLight" class="circle red on"></div>
+        <div id="yellowLight" class="circle yellow"></div>
+        <div id="greenLight" class="circle green"></div>
+    </div>
+    <div class="line-height"></div>
+    <div class="line-width"></div>
+    <button onclick="changeColor()" class="traffic-light__btn open">Click!</button>
+</div>
+
+
+<div class="content">
+    <h2 class="title">Playlist:</h2>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
