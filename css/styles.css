@@ -1,0 +1,17 @@
+.red {
+  background-color: red;
+  width: 200px;
+  height: 200px; }
+  .red .blue {
+    background-color: blue;
+    width: 150px;
+    height: 150px; }
+    .red .blue .yellow {
+      background-color: yellow;
+      width: 100px;
+      height: 100px; }
+
+.square {
+  background-color: black;
+  width: 100px;
+  height: 100px; }
