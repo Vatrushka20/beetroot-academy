@@ -1,32 +1,46 @@
-.red {
-  background-color: red;
-  width: 200px;
-  height: 200px; }
-  .red .blue {
-    background-color: blue;
-    width: 150px;
-    height: 150px; }
-    .red .blue .yellow {
-      background-color: yellow;
-      width: 100px;
-      height: 100px; }
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
 
-.square {
-  background-color: black;
-  width: 100px;
-  height: 100px; }
+.area {
+  height: 200px;
+  width: 400px;
+  font-family: 'Sigmar', sans-serif;
+  font-size: 14px;
+  display: none;
+  border: 2px groove darkblue;
+  padding: 20px; }
 
-.grandparent {
+.view {
+  height: 200px;
+  width: 400px;
+  font-family: 'Sigmar', sans-serif;
+  font-size: 14px;
   padding: 20px;
-  display: inline-block;
-  background-color: purple; }
+  border: 1px solid black; }
 
-.parent {
+.table {
+  padding-top: 50px; }
+  .table .title {
+    background-color: #8599ad;
+    font-size: 20px;
+    cursor: pointer; }
+  .table th, .table td {
+    font-family: 'Sigmar', sans-serif;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 20px; }
+
+.taskThree__text {
+  max-width: 500px;
+  border: 2px solid darkred;
   padding: 20px;
-  background-color: blue;
-  display: inline-block; }
+  font-family: 'Sigmar', sans-serif;
+  font-weight: 400;
+  font-size: 16px; }
 
-.child {
-  width: 50px;
-  height: 50px;
-  background-color: red; }
+@media screen and (max-width: 1199px) {
+  .wrapper {
+    padding-right: 40px;
+    padding-left: 40px; } }
