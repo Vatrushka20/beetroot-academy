@@ -1,3 +1,14 @@
+.progressBar {
+  display: flex;
+  gap: 20px; }
+  .progressBar .bar {
+    width: 300px;
+    height: 40px; }
+  .progressBar .btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-weight: 600; }
+
 .wrapper {
   width: 100%;
   max-width: 1200px;
@@ -32,13 +43,36 @@
     text-align: left;
     padding: 20px; }
 
-.taskThree__text {
-  max-width: 500px;
-  border: 2px solid darkred;
-  padding: 20px;
-  font-family: 'Sigmar', sans-serif;
-  font-weight: 400;
-  font-size: 16px; }
+.taskThree {
+  margin-top: 50px;
+  margin-bottom: 100px; }
+  .taskThree .border {
+    background: #8599ad;
+    border: 3px solid #537493;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px); }
+    .taskThree .border .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Sigmar', sans-serif;
+      font-weight: 700; }
+    .taskThree .border .resize-circle {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      cursor: nwse-resize;
+      border: 1px solid #537493;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: #537493; }
+      .taskThree .border .resize-circle:hover {
+        opacity: .5; }
 
 @media screen and (max-width: 1199px) {
   .wrapper {

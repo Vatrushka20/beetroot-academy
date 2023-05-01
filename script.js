@@ -126,17 +126,17 @@ function sortTableByColumn(table, column, asc = true) {
         return aColText > bColText ? (1 * direction) : (-1 * direction);
     });
 
-// Remove all existing Trs from the table
+// Видалити всі існуючі Tr з таблиці
 
     while (tBody.firstChild) {
         tBody.removeChild(tBody.firstChild);
     }
 
-//     re-add the newly sorted rows
+//     повторно додайте нові відсортовані рядки
 
     tBody.append(...sortRows);
 
-//     remember how the column is currently sorted
+//     запам'ятати, як зараз відсортовано стовпець
 
     table.querySelectorAll('th').forEach(th => th.classList.remove('th-sort-asc', 'th-sort-desc'));
     table.querySelector(`th:nth-child(${column + 1})`).classList.toggle('th-sort-asc', asc);
@@ -155,6 +155,64 @@ document.querySelectorAll('.table-sortable th').forEach(headerCell => {
 
 
 // завдання 3
+/*
+Створити HTML-сторінку з блоком тексту в рамці. Реалізувати можливість змінювати розмір блоку,
+якщо затиснути мишку в правому нижньому кутку і тягнути її далі.
+ */
 
-const taskThree = document.querySelector('.taskThree__text');
-console.log(taskThree);
+/* Function resize отримує елементId та ButtonId, елементId відповідає елементу,
+який стане змінюваним при перетягуванні елемента з елементом ButtonId.
+Рекомендується розміщувати кнопку в правому нижньому куті змінюваного div.
+ */
+const resize = (elementId, buttonId) => {
+    const element = document.getElementById(elementId);
+    const button = document.getElementById(buttonId);
+    let initialWidth = 0;
+    let initialHeight = 0;
+    mouseX = 0;
+    mouseY = 0;
+
+    /* mousedown event для керування масштабуванням за допомогою scale()
+     та додавання mouseup event для зупинки масштабування за допомогою stop()
+    */
+    button.addEventListener('mousedown', function (event) {
+        getMousePosition(event);
+        getElementDimensions();
+        window.addEventListener('mousemove', scale);
+        window.addEventListener('mouseup', removeScale)
+    });
+
+    //Отримуємо позицію миші по x та y на сторінці
+    const getMousePosition = (event) => {
+        mouseX = event.pageX;
+        mouseY = event.pageY;
+    };
+
+    //Отримати висоту та ширину елементу, зробивши властивість числом
+    const getElementDimensions = () => {
+        initialWidth = element.clientWidth;
+        initialHeight = element.clientHeight;
+    };
+
+    /* Встановлює ширину та висоту залежно від того,
+    як рухається миша для масштабування елемента */
+    const scale = (event) => {
+        const width = initialWidth + (event.pageX - mouseX);
+        const height = initialHeight + (event.pageY - mouseY);
+        if (width > 0) {
+            element.style.width = width + 'px';
+        }
+        if (height > 0) {
+            element.style.height = height + 'px';
+        }
+    };
+
+    //Видаляє функцію scale() для зупинки масштабування елементу
+    const removeScale = () => {
+        window.removeEventListener('mousemove', scale)
+    }
+};
+
+// викликаємо функцію
+resize('scalable-div', 'circle');
+
