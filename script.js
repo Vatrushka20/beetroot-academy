@@ -22,7 +22,7 @@ new Swiper(".new-arrivals", {
         clickable: true,
     },
     breakpoints: {
-        320:{
+        320: {
             slidesPerView: 1,
             centeredSlides: false,
             effect: false,
@@ -79,12 +79,26 @@ new Swiper(".partners", {
 });
 
 
-
 const navigation = document.querySelector('#list');
 const hamburger = document.querySelector('.hamburger');
 
 hamburger.addEventListener('click', () => {
     navigation.classList.toggle('is-active');
     hamburger.classList.toggle('is-active')
+});
+
+
+$(document).ready(function () {
+    $('.arrival').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        arrows: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: true,
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='assets/arrows/arrow-prev.svg' alt='arrow'>",
+        nextArrow:"<img class='a-right control-c next slick-next' src='assets/arrows/arrow-next-active.svg' alt='arrow'>",
+    });
 });
 
