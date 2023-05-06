@@ -9,10 +9,10 @@ const swiper = new Swiper('.first-screen', {
 
 
 new Swiper(".new-arrivals", {
-    // loop: true,
+    loop: true,
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: 5,
+    slidesPerView: 6,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -38,6 +38,7 @@ new Swiper(".new-arrivals", {
         },
         1280: {
             slidesPerView: 5,
+            centeredSlides: true,
         },
     },
 });
