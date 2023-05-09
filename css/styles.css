@@ -1,0 +1,110 @@
+@import url(../scss/normalize.css);
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 40px;
+  gap: 0; }
+  .header .form {
+    display: flex;
+    justify-content: center;
+    gap: 5px; }
+    .header .form .search {
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      border: 2px solid #1b528c;
+      color: #8d4d78;
+      font-weight: 700;
+      font-size: 18px; }
+      .header .form .search::placeholder {
+        font-weight: 500;
+        color: #6e92be; }
+      .header .form .search:checked {
+        color: red; }
+    .header .form .button {
+      border-radius: 10px;
+      font-weight: 700;
+      border: 2px solid #1b528c;
+      padding-right: 25px;
+      padding-left: 25px;
+      color: #1b528c; }
+      .header .form .button:hover {
+        border: 2px solid white;
+        color: white;
+        background-color: #1b528c; }
+
+.genres {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; }
+  .genres .genre {
+    cursor: pointer;
+    text-align: center;
+    color: #1b528c;
+    padding: 15px;
+    border: 2px solid #1b528c;
+    border-radius: 10px;
+    font-weight: 500; }
+    .genres .genre:hover {
+      border: 2px solid white;
+      color: white;
+      background-color: #1b528c; }
+    .genres .genre.highlight {
+      border: 2px solid white;
+      color: white;
+      background-color: #1b528c; }
+
+.no-results {
+  color: #1b528c;
+  font-weight: 700;
+  font-size: 50px; }
+
+.pagination {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: #1b528c;
+  font-size: 20px;
+  font-weight: 700;
+  align-items: center; }
+  .pagination .page {
+    cursor: pointer;
+    padding: 10px; }
+    .pagination .page.disabled {
+      cursor: not-allowed;
+      color: grey; }
+  .pagination .current {
+    border-radius: 50%;
+    border: 2px solid #1b528c;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700; }
+
+.movie-container {
+  margin: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .movie-container .movie {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #1b528c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%; }
+    .movie-container .movie__img {
+      width: 60%; }
+    .movie-container .movie__rating {
+      margin-top: 10px; }
+      .movie-container .movie__rating.red {
+        color: red; }
+      .movie-container .movie__rating.green {
+        color: green; }
+      .movie-container .movie__rating.orange {
+        color: orange; }

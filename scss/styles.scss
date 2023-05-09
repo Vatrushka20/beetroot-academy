@@ -1,2 +1,157 @@
+@import "../scss/normalize.css";
 
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 40px;
+  gap: 0;
+
+  .form {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+
+    .search {
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      border: 2px solid #1b528c;
+      color: #8d4d78;
+      font-weight: 700;
+      font-size: 18px;
+
+      &::placeholder {
+        font-weight: 500;
+        color: #6e92be;
+      }
+
+      &:checked {
+        color: red;
+      }
+    }
+
+    .button {
+      border-radius: 10px;
+      font-weight: 700;
+      border: 2px solid #1b528c;
+      padding-right: 25px;
+      padding-left: 25px;
+      color: #1b528c;
+
+      &:hover {
+        border: 2px solid white;
+        color: white;
+        background-color: #1b528c;
+      }
+    }
+  }
+}
+
+.genres {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  .genre {
+    cursor: pointer;
+    text-align: center;
+    color: #1b528c;
+    //width: 100px;
+    padding: 15px;
+    border: 2px solid #1b528c;
+    border-radius: 10px;
+    font-weight: 500;
+
+    &:hover {
+      border: 2px solid white;
+      color: white;
+      background-color: #1b528c;
+    }
+
+    &.highlight {
+      border: 2px solid white;
+      color: white;
+      background-color: #1b528c;
+    }
+  }
+}
+
+.no-results {
+  color: #1b528c;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+
+.pagination {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: #1b528c;
+  font-size: 20px;
+  font-weight: 700;
+  align-items: center;
+
+  .page {
+    cursor: pointer;
+    padding: 10px;
+
+    &.disabled {
+      cursor: not-allowed;
+      color: grey;
+    }
+  }
+
+  .current {
+    border-radius: 50%;
+    border: 2px solid #1b528c;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+
+.movie-container {
+  margin: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .movie {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #1b528c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+
+    &__img {
+      width: 60%;
+    }
+
+    &__rating {
+      margin-top: 10px;
+
+      &.red {
+        color: red;
+      }
+
+      &.green {
+        color: green;
+      }
+
+      &.orange {
+        color: orange;
+      }
+    }
+  }
+}
 
