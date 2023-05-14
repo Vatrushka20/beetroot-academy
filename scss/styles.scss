@@ -1,2 +1,1260 @@
+@import "normalize";
+@import "mixins";
+@import "variables";
+@import "responsive";
+@import "scss/_hamburger.css";
+
+//IN COMMON
+
+.wrapper {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.wrapper-footer {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+}
+
+.wrapper-what-we-do {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.divider {
+  background-color: $blue;
+  height: 1px;
+  border: 0;
+  width: 100px;
+}
+
+.primary-title {
+  @include fonts('Montserrat', 700, 44px, 54px, $blue);
+}
+
+.description {
+  @include fonts('Open Sans', 400, 18px, 30px, $blue);
+  max-width: 470px;
+  margin-top: 19px;
+  margin-bottom: 40px;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid $blue;
+  padding: 16px 41px 17px;
+  @include fonts('Montserrat', 400, 14px, 17px, $base-black);
+
+  &:hover {
+    background: $blue;
+    color: $base-white;
+  }
+
+  &:active {
+    transform: translateY(-5px)
+  }
+}
+
+//-----------------
+
+// HEADER SECTION
+.header {
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+  @include cwd(650px) {
+    top: 40px;
+  }
+  @include cwd(450px) {
+    top: 30px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+      @include cwd(890px) {
+        width: 25%;
+      }
+      @include md {
+        width: 50%;
+      }
+    }
+
+    &__nav {
+
+      .list {
+        display: flex;
+        gap: 70px;
+        @include cwd(1100px) {
+          gap: 40px;
+        }
+        @include cwd(980px) {
+          gap: 20px;
+        }
+        @include md {
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%);
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+          background: $base-white;
+          width: 100vw;
+          padding-bottom: 10px;
+          padding-top: 10px;
+
+          &.is-active {
+            display: flex;
+          }
+        }
+
+        &__item {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          @include cwd(890px) {
+            gap: 9px;
+          }
+          @include md {
+            gap: 14px;
+          }
+
+          &__link {
+            @include fonts('Source Sans Pro', 400, 14px, 18px, $base-white);
+            @include md {
+              color: $blue;
+              font-size: 16px;
+            }
+          }
+
+          svg {
+            @include cwd(890px) {
+              width: 7px;
+              height: 7px;
+            }
+          }
+
+          &:hover {
+            svg {
+              fill: white;
+              @include md {
+                width: 12px;
+                height: 12px;
+                fill: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__social-media {
+      cursor: pointer;
+      display: flex;
+      gap: 20px;
+
+      @include cwd(980px) {
+        gap: 10px;
+      }
+      @include md {
+        display: none;
+      }
 
 
+      svg {
+        @include cwd(890px) {
+          width: 33px;
+          height: 33px;
+        }
+
+        &:hover {
+          .stroke {
+            fill: $base-white;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+      padding: 0;
+
+      .hamburger-box {
+        width: 30px;
+        height: 24px;
+
+        @include cwd(425px) {
+          width: 22px;
+          height: 20px;
+        }
+
+        .hamburger-inner {
+          width: 30px;
+          height: 2px;
+          background-color: $base-white;
+          @include cwd(425px) {
+            width: 22px;
+          }
+
+          &:before {
+            width: 30px;
+            height: 2px;
+            background-color: $base-white;
+            @include cwd(425px) {
+              width: 22px;
+            }
+          }
+
+          &:after {
+            width: 30px;
+            height: 2px;
+            background-color: $base-white;
+            @include cwd(425px) {
+              width: 22px;
+            }
+          }
+        }
+      }
+
+      @include md {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// FIRST_SCREEN SECTION
+.first-screen {
+  position: relative;
+
+  &__list {
+    height: 100vh;
+
+    &__slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+
+      .slide-title {
+        @include fonts('Montserrat', 700, 80px, 98px, $base-white);
+        letter-spacing: 0.1em;
+        text-align: center;
+        @include cwd(700px) {
+          font-size: 70px;
+          line-height: 88px;
+        }
+        @include cwd(550px) {
+          font-size: 59px;
+          line-height: 75px;
+        }
+        @include cwd(400px) {
+          font-size: 50px;
+          line-height: 55px;
+        }
+        @include cwd(340px) {
+          font-size: 38px;
+          line-height: 47px;
+        }
+      }
+
+      .slide-description {
+        @include fonts('Montserrat', 400, 18px, 22px, $base-white);
+        text-align: center;
+        letter-spacing: 0.3em;
+        @include cwd(700px) {
+          font-size: 16px;
+          line-height: 30px;
+        }
+        @include cwd(650px) {
+          font-size: 14px;
+          line-height: 30px;
+        }
+        @include cwd(400px) {
+          font-size: 13px;
+          line-height: 25px;
+        }
+      }
+
+      &.first {
+        background-image: $gradient, url("../assets/first-screen/first-screen-1.jpeg");
+      }
+
+      &.second {
+        background-image: $gradient, url("../assets/first-screen/first-screen-4.jpeg");
+      }
+
+      &.third {
+        background-image: $gradient, url("../assets/first-screen/first-screen-5.jpeg");
+      }
+
+      &.fourth {
+        background-image: $gradient, url("../assets/first-screen/first-screen-6.jpeg");
+      }
+
+      &.fifth {
+        background-image: $gradient, url("../assets/first-screen/first-screen-7.jpeg");
+      }
+
+      &.sixth {
+        background-image: $gradient, url("../assets/first-screen/first-screen-10.jpeg");
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-right: 52px;
+    @include cwd(650px) {
+      gap: 30px;
+      margin-right: 35px;
+    }
+    @include cwd(500px) {
+      gap: 25px;
+      margin-right: 15px;
+    }
+    @include cwd(400px) {
+      gap: 20px;
+      margin-right: 5px;
+    }
+
+    &-bullet {
+      width: 10px;
+      height: 10px;
+      border: 1px solid $base-white;
+      background-color: transparent;
+      opacity: 1;
+
+      &-active {
+        background-color: $base-white;
+      }
+    }
+  }
+
+  .scroll-down {
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+
+    .arrow {
+      animation: jump-arrow 2.5s infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50px;
+
+      svg {
+        &:hover {
+          fill: rgba(245, 245, 245, 0.6);
+        }
+      }
+    }
+  }
+}
+
+
+//WHAT WE DO SECTION
+
+.what-we-do {
+  .divider {
+    margin: 100px auto 30px;
+    @include cwd(900px) {
+      margin: 60px auto 30px;
+    }
+  }
+
+  &__primary-title {
+    text-align: center;
+    padding-bottom: 90px;
+    @include cwd(900px) {
+      padding-bottom: 60px;
+    }
+    @include cwd(550px) {
+      font-size: 38px;
+      padding-bottom: 50px;
+    }
+    @include cwd(425px) {
+      font-size: 36px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    @include cwd(1024px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &.first {
+      gap: 70px;
+      justify-content: flex-start;
+      @include cwd(1250px) {
+        gap: 40px;
+      }
+      @include cwd(650px) {
+        gap: 20px;
+      }
+    }
+
+    &.second {
+      gap: 64px;
+      justify-content: flex-end;
+      @include cwd(1250px) {
+        gap: 40px;
+      }
+      @include cwd(650px) {
+        gap: 20px;
+      }
+    }
+
+    &__image {
+      .trade {
+        @include cwd(1024px) {
+          display: none;
+        }
+      }
+
+      .trade-1024 {
+        display: none;
+        @include cwd(1024px) {
+          display: inline-block;
+          padding: 0 40px;
+        }
+
+      }
+
+      .commerce-1024 {
+        display: none;
+        @include cwd(1024px) {
+          display: block;
+          padding: 0 40px;
+        }
+      }
+
+      .commerce {
+        @include cwd(1024px) {
+          display: none;
+        }
+
+      }
+    }
+
+    &__info {
+      @include cwd(1024px) {
+        margin: 0 40px;
+        text-align: center;
+      }
+
+      @include cwd(650px) {
+        margin: 0 20px;
+      }
+      @include cwd(400px) {
+        margin: 0 10px;
+      }
+
+      .title {
+        @include fonts('Montserrat', 400, 22px, 27px, $blue);
+        padding-top: 140px;
+
+        @include cwd(1450px) {
+          padding-top: 50px;
+        }
+        @include cwd(1390px) {
+          padding-top: 0;
+        }
+      }
+
+      .primary-title {
+        @include cwd(1140px) {
+          font-size: 40px;
+          line-height: 50px;
+        }
+        @include cwd(550px) {
+          font-size: 30px;
+        }
+        @include cwd(343px) {
+          line-height: 40px;
+        }
+      }
+
+      .description {
+        @include cwd(1190px) {
+          line-height: 25px;
+        }
+        @include cwd(1140px) {
+          font-size: 16px;
+        }
+        @include cwd(1024px) {
+          max-width: 600px;
+        }
+        @include cwd(425px) {
+          margin-top: 14px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .location {
+        @include fonts('Open Sans', 400, 15px, 20px, $base-black);
+        font-style: italic;
+        margin-top: 60px;
+
+        &.location-trade-centre {
+          margin-bottom: 146px;
+          @include cwd(1450px) {
+            margin-bottom: 180px;
+          }
+          @include cwd(1390px) {
+            margin-bottom: 210px;
+          }
+          @include cwd(1250px) {
+            margin-top: 40px;
+            margin-bottom: 170px;
+          }
+          @include cwd(1150px) {
+            margin-bottom: 150px;
+          }
+          @include cwd(1065px) {
+            margin-top: 30px;
+          }
+          @include cwd(1024px) {
+            margin-bottom: 70px;
+          }
+          @include cwd(550px) {
+            margin-bottom: 40px;
+          }
+        }
+
+        &.location-commerce-centre {
+          margin-bottom: 176px;
+          @include cwd(1450px) {
+            margin-bottom: 200px;
+          }
+          @include cwd(1250px) {
+            margin-top: 40px;
+            margin-bottom: 150px;
+          }
+          @include cwd(1150px) {
+            margin-bottom: 110px;
+          }
+          @include cwd(1065px) {
+            margin-top: 30px;
+          }
+          @include cwd(1024px) {
+            margin-bottom: 70px;
+          }
+          @include cwd(550px) {
+            margin-bottom: 40px;
+          }
+        }
+
+        .location-icon {
+          vertical-align: middle;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+// LATEST NEWS SECTION
+.latest-news {
+  background-image: url("../assets/background/background-latest-news.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 978px;
+  @include cwd(900px) {
+    height: 900px;
+  }
+  @include cwd(700px) {
+    height: 850px;
+  }
+  @include cwd(649px) {
+    height: 940px;
+  }
+  @include cwd(470px) {
+    height: 900px;
+  }
+  @include cwd(470px) {
+    height: 930px;
+  }
+
+  &__content {
+    padding-top: 100px;
+    @include cwd(1330px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @include cwd(900px) {
+      padding-top: 60px;
+    }
+
+    .divider {
+      background-color: $base-white;
+      margin: 0 auto 0;
+    }
+
+    .primary-title {
+      color: $base-white;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .myCarousel {
+      padding-top: 90px;
+      position: relative;
+      @include cwd(900px) {
+        padding-top: 60px;
+      }
+
+      .owl-nav {
+        .owl-prev {
+          border: 1px solid white;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: $base-white;
+          position: absolute;
+          top: 327px;
+          left: -77px;
+          @include md {
+            display: none;
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, .5);
+          }
+        }
+
+        .owl-next {
+          border: 1px solid white;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: $base-white;
+          position: absolute;
+          top: 327px;
+          right: -77px;
+          @include md {
+            display: none;
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, .5);
+          }
+
+          &:focus {
+
+          }
+        }
+
+        @include cwd(1024px) {
+          display: none;
+        }
+      }
+
+      .owl-stage-outer {
+
+        .owl-stage {
+          .slide {
+            background-color: $base-white;
+            @include cwd(1251px) {
+              height: 510px !important;
+            }
+            @include cwd(1200px) {
+              height: 530px !important;
+            }
+            @include cwd(1024px) {
+              height: 580px !important;
+            }
+            @include cwd(900px) {
+              height: 550px !important;
+            }
+            @include cwd(780px) {
+              height: 525px !important;
+            }
+            @include cwd(649px) {
+              height: 630px !important;
+            }
+            @include cwd(575px) {
+              height: 610px !important;
+            }
+            @include cwd(520px) {
+              height: 590px !important;
+            }
+            @include cwd(470px) {
+              height: 560px !important;
+            }
+            @include cwd(405px) {
+              height: 550px !important;
+            }
+            @include cwd(375px) {
+              height: 530px !important;
+            }
+
+            &__title {
+              @include fonts('Montserrat', 700, 22px, 27px, $blue);
+              margin: 0 20px;
+              padding-top: 30px;
+            }
+
+            .description {
+              line-height: 25px;
+              margin: 15px 20px 39px;
+            }
+
+            &__author {
+              display: flex;
+              gap: 20px;
+              margin: 0 20px 30px;
+              align-items: center;
+
+              &__avatar {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+              }
+
+              &__info {
+                .author {
+                  @include fonts('Montserrat', 400, 18px, 22px, $blue);
+                }
+
+                .comment-date {
+                  @include fonts('Montserrat', 400, 14px, 17px, $light-blue);
+                  padding-top: 6px;
+
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  @include cwd(425px) {
+    gap: 15px;
+  }
+
+  .owl-dot {
+    &.active {
+      span {
+        background-color: $base-white;
+      }
+    }
+
+    span {
+      border: 1px solid white;
+      background: transparent;
+    }
+  }
+}
+
+
+//GALLERY SECTION
+
+.gallery {
+  .divider {
+    margin: 150px auto 30px;
+    @include cwd(1024px) {
+      margin: 100px auto 30px;
+    }
+    @include cwd(900px) {
+      margin: 60px auto 30px;
+    }
+  }
+
+  .primary-title {
+    text-align: center;
+    padding-bottom: 90px;
+    @include cwd(900px) {
+      padding-bottom: 60px;
+    }
+    @include md {
+      padding-bottom: 40px;
+    }
+    @include cwd(550px) {
+      font-size: 38px;
+    }
+    @include cwd(425px) {
+      font-size: 36px;
+    }
+  }
+
+  &__photo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    @include cwd(1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      justify-items: stretch;
+    }
+    @include md {
+      grid-column-gap: 5px;
+      grid-row-gap: 5px;
+    }
+
+    .photo-1 {
+      background-image: url("../assets/gallery/zoom-in-icon.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $blue;
+      grid-area: 1 / 1 / 3 / 3;
+      @include cwd(1024px) {
+        grid-area: 1 / 1 / 3 / 3;
+      }
+
+      &.zoomed {
+        background-image: none;
+      }
+    }
+
+    .photo-2 {
+      grid-area: 1 / 3 / 2 / 4;
+      @include cwd(1024px) {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+    }
+
+    .photo-3 {
+      grid-area: 1 / 4 / 2 / 5;
+      @include cwd(1024px) {
+        grid-area: 3 / 2 / 4 / 3;
+      }
+    }
+
+    .photo-4 {
+      grid-area: 2 / 3 / 3 / 4;
+      @include cwd(1024px) {
+        grid-area: 4 / 1 / 5 / 2;
+      }
+    }
+
+    .photo-5 {
+      grid-area: 2 / 4 / 3 / 5;
+      @include cwd(1024px) {
+        grid-area: 4 / 2 / 5 / 3;
+      }
+    }
+
+    img {
+      cursor: pointer;
+
+      &.zoomed {
+        width: 80vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+      }
+    }
+  }
+
+  #seeGallery {
+    display: none;
+    margin-top: 10px;
+
+    img {
+      &.zoomed {
+        width: 80vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+      }
+    }
+
+    &.is-active {
+      display: grid;
+    }
+  }
+
+  .button {
+    margin: 60px auto 150px;
+    display: flex;
+    justify-content: center;
+    @include md {
+      margin: 40px auto 70px;
+    }
+  }
+}
+
+
+//MAP SECTION
+.map {
+  height: 700px;
+  @include cwd(580px) {
+    margin-bottom: 100px;
+  }
+  @include cwd(475px) {
+    margin-bottom: 250px;
+  }
+}
+
+//FOOTER
+.footer {
+  background-image: url("../assets/background/background-footer.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 549px;
+  position: relative;
+  @include cwd(475px) {
+    height: 300px;
+  }
+
+  &__content {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 204px;
+      @include cwd(475px) {
+        gap: 50px;
+        flex-direction: column;
+        padding-top: 50px;
+      }
+
+      .social-media {
+        display: flex;
+        gap: 20px;
+
+        svg {
+          cursor: pointer;
+
+          &:hover {
+            .stroke {
+              fill: $base-white;
+            }
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      @include fonts('Montserrat', 400, 14px, 17px, $base-white);
+      padding-top: 41px;
+      @include cwd(475px) {
+        text-align: center;
+      }
+    }
+  }
+
+  .section-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    background: white url("../assets/background/background-form.png") no-repeat center;
+    height: 450px;
+    position: absolute;
+    bottom: 400px;
+    left: 50%;
+    transform: translate(-50%);
+    @include cwd(580px) {
+      height: 580px;
+    }
+    @include cwd(475px) {
+      bottom: 328px;
+    }
+
+    .divider {
+      margin: 60px auto 30px;
+      border-bottom: 1px solid $blue;
+    }
+
+    .primary-title {
+      text-align: center;
+      padding-bottom: 42px;
+      @include cwd(900px) {
+        padding-bottom: 60px;
+      }
+      @include md {
+        padding-bottom: 40px;
+      }
+      @include cwd(550px) {
+        font-size: 38px;
+      }
+      @include cwd(425px) {
+        padding-bottom: 40px;
+        font-size: 36px;
+      }
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 68px;
+      @include md {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+      @include cwd(650px) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      @include cwd(400px) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      @include cwd(580px) {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @include cwd(425px) {
+          gap: 20px;
+        }
+
+        &__text {
+          @include fonts('Montserrat', 400, 18px, 27px, $base-black);
+          @include cwd(600px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+
+        .icon {
+          padding-right: 10px;
+
+          img {
+            vertical-align: text-top;;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &__shape {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .label {
+          input {
+            @include fonts('Montserrat', 400, 18px, 27px, $base-black);
+            border-bottom: 1px solid rgba(75, 85, 98, .2);
+            width: 310px;
+            padding-bottom: 14px;
+            @include cwd(710px) {
+              width: 247px;
+            }
+            @include cwd(600px) {
+              font-size: 17px;
+              line-height: 20px;
+            }
+            @include cwd(580px) {
+              width: 310px;
+            }
+
+            &::placeholder {
+              color: rgba(75, 85, 98, .5);
+            }
+
+            &:hover {
+              border-bottom: 1px solid $blue;
+            }
+
+            &:focus {
+              outline: none;
+              border-bottom: 1px solid $blue;
+            }
+          }
+        }
+
+        .button-form {
+          margin-left: 167px;
+          border: 1px solid $base-black;
+          @include fonts('Montserrat', 400, 18px, 27px, $base-black);
+          width: 72px;
+          padding: 11px 34px 12px;
+          @include cwd(710px) {
+            margin-left: 105px;
+          }
+          @include cwd(580px) {
+            margin: 0 auto;
+          }
+
+          &:hover {
+            color: $base-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    width: 50vw;
+  }
+  to {
+    width: 100vw;
+  }
+}
+
+@media screen and(max-width: 1250px) {
+  //.wrapper-form {
+  //  margin-left: 40px;
+  //  margin-right: 40px;
+  //}
+  .wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .wrapper-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .slide-title, .slide-description {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .latest-news__content {
+    &.wrapper {
+      padding-left: 70px;
+      padding-right: 70px;
+      @include cwd(1190px) {
+        padding-left: 90px;
+        padding-right: 90px;
+      }
+      @include cwd(1024px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  }
+  .section-form {
+    &.wrapper-footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+
+@media screen and(max-width: 650px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .wrapper-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .slide-title {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .slide-description {
+    padding-left: 51px;
+    padding-right: 51px;
+  }
+  .section-form {
+    &.wrapper-footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and(max-width: 400px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .wrapper-footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .slide-title {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .slide-description {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-form {
+    &.wrapper-footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@keyframes jump-arrow {
+  0%,
+  20%,
+  55%,
+  80%,
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  40% {
+    transform: translate3d(-50%, -15px, 0);
+  }
+
+  70% {
+    transform: translate3d(-50%, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(-50%, -5px, 0);
+  }
+}
