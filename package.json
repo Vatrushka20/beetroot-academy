@@ -1,16 +1,27 @@
 {
-  "name": "beetroot-academy",
+  "name": "gulp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
+    "prefix": "gulp prefix",
+    "start": "npx gulp watch",
     "scss:compile": "node-sass scss/styles.scss css/styles.css",
     "css:watch": "npm run scss:compile && npm run scss:compile -- -w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^8.0.0",
+    "autoprefixer": "^10.4.14",
+    "sass": "^1.62.1",
     "swiper": "^9.2.4"
-  }
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.23"
+  },
+  "description": ""
 }

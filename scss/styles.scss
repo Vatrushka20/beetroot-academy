@@ -11,6 +11,7 @@
 }
 
 .wrapper-header {
+  display: flex;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -709,102 +710,7 @@
 }
 
 
-// SLICK SLIDER
-//.title-arrivals {
-//padding-top: 70px;
-//  padding-bottom: 50px;
-//}
-//
-//.arrival {
-//  display: flex;
-//  gap: 20px;
-//  justify-content: center;
-//  //margin: 40px;
-//  margin-left: 102px;
-//  margin-right: 102px;
-//
-//  &__content {
-//    padding: 20px 9px;
-//    width: 224px !important;
-//    border: 1px solid $brown-light;
-//    position: relative;
-//    cursor: pointer;
-//    background-color: white;
-//
-//
-//    &:hover {
-//      border: 1px solid $tomato-light;
-//
-//      .list-arrival__item__status {
-//        background-color: $brown-light;
-//        color: $black;
-//      }
-//    }
-//
-//    &__text {
-//      @include fonts(600, 16px, 20px, $black);
-//      text-align: center;
-//      padding-top: 18px;
-//      padding-bottom: 10px;
-//    }
-//
-//    &__price {
-//      @include fonts(700, 24px, 29px, $black);
-//      text-align: center;
-//    }
-//
-//
-//    &__status {
-//      @include fonts(500, 10px, 12px, white);
-//      padding: 4px;
-//      background-color: $tomato-light;
-//      max-width: 60px;
-//      text-transform: uppercase;
-//      text-align: center;
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//
-//      &.sold {
-//        padding: 4px 15px;
-//      }
-//    }
-//
-//
-//
-//  }
-//}
-//
-//.slick-prev,
-//.slick-next {
-//  z-index: 100;
-//}
-//
-//.slick-dots {
-//  li {
-//    button {
-//      &:hover, &:focus {
-//        &:before {
-//        }
-//      }
-//
-//      &:before {
-//        font-size: 40px;
-//        color: black;
-//      }
-//    }
-//
-//    &.slick-active button:before {
-//      color: red;
-//    }
-//  }
-//}
-//.control-c {
-//  width: 50px;
-//  height: 50px;
-//}
-
-@media screen and(max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .wrapper-header {
     padding-left: 40px;
     padding-right: 40px;
