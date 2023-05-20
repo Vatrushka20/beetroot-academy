@@ -18,34 +18,44 @@ class Animal {
 }
 
 class Dog extends Animal {
-    someDogProperty;
+    #someDogProperty;
+
     constructor(name, color, weight, someDogProperty) {
         super(name, color, weight);
-        this.someDogProperty = someDogProperty;
+        this.#someDogProperty = someDogProperty;
     }
 
     say() {
-      console.log('Bark')
+        console.log('Bark')
     }
 }
 
 class Cat extends Animal {
     someCatProperty;
+    static catProp = 'some';
+
     constructor(someCatProperty, name, color, weight) {
         super(name, color, weight);
         this.someCatProperty = someCatProperty;
     }
+
     say() {
         console.log('Meow')
+    }
+
+    static someFn() {
+        console.log(this.catProp)
     }
 }
 
 
 const dog = new Dog('Barsik', 'Red', 20, 'dog value');
-const cat = new Cat('cat value',"Mushka", 'Green', 5);
+const cat = new Cat('cat value', "Mushka", 'Green', 5);
 cat.eat()
 dog.eat()
 cat.say()
 dog.say()
+
+Cat.someFn()
 console.log(dog)
 console.log(cat)
