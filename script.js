@@ -169,11 +169,11 @@ class Employee {
 }
 
 const workers = [
-    new Employee('Lynne Stokes', 'The Bank Teller', '3', '1500'),
-    new Employee('Dana Whitney', 'The Loan Officer', '2', '1550'),
-    new Employee('Hallie Brandt', 'The Investment Banker', '4', '2300'),
-    new Employee('Juliet Berger', 'The Loan Officer', '5', '2300'),
-    new Employee('Rosemary Flowers', 'The Bank Teller', '1', '1000'),
+    new Employee('Lynne Stokes', 'The Bank Teller', 3, 1500),
+    new Employee('Dana Whitney', 'The Loan Officer', 2, 1550),
+    new Employee('Hallie Brandt', 'The Investment Banker', 4, 2300),
+    new Employee('Juliet Berger', 'The Loan Officer', 5, 2300),
+    new Employee('Rosemary Flowers', 'The Bank Teller', 1, 1000),
     new Employee('Rosa Holmes', 'The Financial Manager', '3', '3000'),
     new Employee('Janis David', 'The Financial Analyst', '6', '3250'),
     new Employee('Morton Lawson', 'The Bank Manager', '8', '3500'),
