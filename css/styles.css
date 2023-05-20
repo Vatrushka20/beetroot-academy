@@ -1,0 +1,20 @@
+.employee {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .employee__table {
+    border: 3px solid #032c42;
+    margin: auto; }
+    .employee__table .trHead .thHead {
+      border: 2px solid #032c42;
+      padding: 10px 20px;
+      margin: 10px 10px;
+      font-size: 27px;
+      font-weight: 700; }
+    .employee__table .trAll {
+      color: #1c528d; }
+      .employee__table .trAll .td {
+        border: 2px solid #032c42;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center; }
