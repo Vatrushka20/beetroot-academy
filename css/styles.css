@@ -1,0 +1,73 @@
+main {
+  padding-top: 30px;
+  display: flex;
+  gap: 5px;
+  justify-content: center; }
+  main .input {
+    border: 2px solid #6b7c8a;
+    border-radius: 5px;
+    outline: none;
+    padding: 7px;
+    color: #03304f;
+    font-weight: 700; }
+    main .input::placeholder {
+      font-weight: 700; }
+  main .button {
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid #03304f;
+    padding: 7px;
+    border-radius: 5px;
+    background: #03304f;
+    color: #f4f6f8; }
+    main .button:hover {
+      border: 2px solid #1D6DAF7F;
+      background: rgba(29, 109, 175, 0.5);
+      color: white; }
+    main .button:active {
+      transform: translateY(-3px); }
+
+.my-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; }
+  .my-clock .clockLabel {
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    font-weight: 700; }
+  .my-clock .showTime {
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 210px;
+    border: 2px solid #D9D9D9;
+    background-color: #D9D9D9;
+    border-radius: 50%; }
+    .my-clock .showTime .divTime {
+      margin: auto;
+      color: #03304f; }
+  .my-clock .clock {
+    display: flex;
+    justify-content: center;
+    gap: 15px; }
+    .my-clock .clock .customBtn {
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 10px;
+      border: none;
+      color: white;
+      font-weight: 700;
+      border-radius: 5px; }
+      .my-clock .clock .customBtn.green {
+        background-color: #10731f; }
+      .my-clock .clock .customBtn.blue {
+        background-color: #000AFF; }
+      .my-clock .clock .customBtn.red {
+        background-color: #ce0319; }
+      .my-clock .clock .customBtn:hover {
+        opacity: .7; }
